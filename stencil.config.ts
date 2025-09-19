@@ -8,7 +8,7 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      copy: [{ src: 'style/fonts', dest: 'fonts' }],
+      copy: [{ src: 'style/fonts', dest: 'dist/fonts' }],
     },
     {
       type: 'dist-custom-elements',
@@ -21,7 +21,7 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
-      copy: [{ src: 'style/fonts', dest: 'fonts' }],
+      copy: [{ src: 'style/fonts', dest: 'build/fonts' }],
     },
   ],
   testing: {

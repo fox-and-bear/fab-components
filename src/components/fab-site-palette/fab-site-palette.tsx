@@ -40,10 +40,19 @@ export class FabSitePalette {
           onMouseDown={this.onMouseDown}
         >
           <div class="site-palette-header">
-            <span style={{ backgroundColor: this.colourValue }}></span>
+            <span class="colour-swatch" style={{ backgroundColor: this.colourValue }}></span>
             <h1>Primary Colour</h1>
             <div class="copy-button" onClick={() => this.onCopyClick(this.colourValue)} title="Copy to clipboard">
               {this.colourValue}
+            </div>
+            <div class="harmony-tabs">
+              {/* Colour Harmonies  */}
+              <span class="harmony-tab" title="Complementary"></span>
+              <span class="harmony-tab" title="Analogous"></span>
+              <span class="harmony-tab" title="Triadic"></span>
+              <span class="harmony-tab" title="Tetradic"></span>
+              <span class="harmony-tab" title="Split"></span>
+              <span class="harmony-tab" title="Neutral"></span>
             </div>
           </div>
           <div class="site-palette-steps">
