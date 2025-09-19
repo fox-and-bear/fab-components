@@ -1,0 +1,31 @@
+:host {
+  --header-height: 75px;
+  --footer-height: 64px;
+  --sidebar-width: 275px;
+  --sidebar-width-collapsed: 60px;
+  --icon-padding: 1rem;
+  --icon-size: calc(var(--sidebar-width-collapsed) - var(--icon-padding) * 2);
+
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  /* min-width: var(--sidebar-width); */
+  width: var(--sidebar-width);
+  padding-block: var(--icon-padding);
+
+  outline: var(--border-colour) dashed 1px;
+
+  background: var(--bg-colour);
+  transition: width 0.3s linear;
+}
+
+:host([collapsed]) {
+  width: var(--sidebar-width-collapsed);
+}
+
+:host-context(.dark) {
+  background-color: var(--surface-900);
+}

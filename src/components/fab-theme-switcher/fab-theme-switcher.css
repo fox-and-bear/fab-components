@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.theme-toggle {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.sun {
+  fill: var(--text-colour);
+  transition: fill 0.2s ease;
+}
+
+.moon {
+  fill: transparent;
+  transition: fill 0.2s ease;
+}
+
+/* Dark theme styles - these will apply when document has 'dark' class */
+:host-context(.dark) .sun {
+  fill: transparent;
+}
+
+:host-context(.dark) .moon {
+  fill: var(--text-colour);
+}

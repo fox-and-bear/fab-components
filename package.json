@@ -13,10 +13,6 @@
       "import": "./dist/fab-components/fab-components.esm.js",
       "require": "./dist/fab-components/fab-components.cjs.js"
     },
-    "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
-    },
     "./loader": {
       "import": "./loader/index.js",
       "require": "./loader/index.cjs",
@@ -36,7 +32,9 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "generate:palettes": "node scripts/generate-palettes.js",
+    "prebuild": "npm run generate:palettes"
   },
   "devDependencies": {
     "@stencil/core": "^4.27.1",

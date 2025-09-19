@@ -1,0 +1,173 @@
+/* below can be imported: @import "https://foxandbear.dev/styles/reset.css"; */
+@layer reset {
+  :root {
+    color-scheme: dark light;
+  }
+
+  /* Use border-box by default, globally. */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    font: inherit;
+  }
+
+  /* remove default spacing */
+  /* force styling of type through styling, rather than elements */
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+
+  /* FUTUREPROOFING Consistent line-spacing */
+  /* dark mode user-agent-styles */
+  /* improves punctuation in supported browsers */
+  html {
+    line-sizing: normal;
+    hanging-punctuation: first last;
+  }
+
+  /* Remove body margins */
+  /* min body height */
+  body {
+    margin: 0;
+    min-height: 100svh;
+  }
+
+  /* Maintain hidden behaviour when overriding display values */
+  [hidden] {
+    display: none;
+  }
+
+  /* Rem units for headings */
+  /* Keep h1 margins consistent, even when nested. */
+
+  h1 {
+    font-size: 2rem;
+    margin: 0.67em 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.17rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.83rem;
+  }
+  h6 {
+    font-size: 0.67rem;
+  }
+
+  /* Improved heading in supported browsers */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  /* Overflow by default is bad... */
+  pre {
+    white-space: pre-wrap;
+  }
+
+  hr {
+    border-style: solid;
+    border-width: 1px 0 0;
+    color: inherit;
+    height: 0;
+    overflow: visible;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    display: block;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+
+  img {
+    /* in combination with max-width: 100%; above */
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
+  }
+
+  picture {
+    display: contents;
+  }
+
+  source {
+    display: none;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    height: auto;
+  }
+
+  /* improve readability with max-width on paragraphs and lists */
+  /* prevent orphans in supported browsers */
+  p,
+  li {
+    max-width: var(--p-max-width, 65ch);
+    text-wrap: pretty;
+  }
+
+  html {
+    line-height: 1.5;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.25;
+  }
+  caption,
+  figcaption,
+  label,
+  legend {
+    line-height: 1.375;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-delay: 0s !important;
+      transition-duration: 0s !important;
+    }
+  }
+}

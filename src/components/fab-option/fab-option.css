@@ -1,0 +1,74 @@
+:host {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-colour);
+  border-radius: var(--radius);
+  transition: background-color var(--transition-duration-fast) var(--easing-default);
+  gap: var(--spacing-2);
+  user-select: none;
+}
+
+:host(:hover:not(.fab-option--selected)) {
+  background-color: var(--primary-colour-transparency-80);
+}
+
+:host(.fab-option--selected) {
+  background-color: var(--primary-colour);
+  color: var(--primary-foreground);
+}
+
+:host(.fab-option--disabled) {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+}
+
+.fab-option--image {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  overflow: hidden;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.fab-option--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fab-option--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  flex-shrink: 0;
+}
+
+.fab-option--content {
+  flex: 1;
+  min-width: 0;
+}
+
+.fab-option--label {
+  font-weight: var(--font-weight-regular);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fab-option--description {
+  font-size: var(--font-size-xs);
+  color: var(--surface-60);
+  margin-top: var(--spacing-1);
+}
+
+.fab-option--selected-icon {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+  flex-shrink: 0;
+  color: var(--primary-foreground);
+}

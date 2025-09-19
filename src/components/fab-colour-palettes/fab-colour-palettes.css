@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+.palette-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-3) var(--spacing-1);
+}
+
+.palette {
+  display: grid;
+  grid-column: 1 /-1;
+  grid-template-columns: subgrid;
+}
+.palette-header,
+.palette-step {
+  padding: var(--padding-squeeze);
+  border-radius: 0.5rem;
+}
+
+/* .palette-step:nth-of-type(-n + 6) {
+  border-radius: 0.5rem 0 0 0;
+}
+
+.palette-step:nth-of-type(n + 5):nth-last-of-type(-n + 5) {
+  border-radius: 0 0.5rem 0 0;
+} */
+
+.palette-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.palette-header {
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+
+  i {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+
+    border-radius: 100vw;
+  }
+}

@@ -1,0 +1,106 @@
+:root {
+  --brand-colour: oklch(75.732% 0.17518 59.312);
+  --accent-colour: oklch(51.933% 0.18613 31.629);
+
+  --bg-colour-deep: var(--surface-50);
+  --bg-colour: var(--surface-100);
+  --bg-colour-shallow: var(--surface-200);
+  --text-colour: var(--surface-950);
+
+  --primary-colour: var(--accent-colour);
+  --primary-foreground: var(--surface-50);
+  --secondary-colour: var(--brand-colour);
+  --secondary-foreground: var(--surface-950);
+
+  --radius: 0px;
+
+  --border-width: 1px;
+  --border-colour: var(--surface-300);
+}
+
+:root.dark {
+  --bg-colour-deep: var(--surface-950);
+  --bg-colour: var(--surface-900);
+  --bg-colour-shallow: var(--surface-800);
+  --text-colour: var(--surface-50);
+
+  --primary-colour: var(--brand-colour);
+  --primary-foreground: var(--surface-950);
+  --secondary-colour: var(--accent-colour);
+  --secondary-foreground: var(--surface-50);
+}
+
+:root {
+  /* Spacing */
+  --spacing-0: 0rem; /* 0px */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 1rem; /* 16px */
+  --spacing-4: 1.5rem; /* 24px */
+  --spacing-5: 2rem; /* 32px */
+  --spacing-6: 2.5rem; /* 40px */
+
+  /* Padding presets */
+  --padding-squish: var(--spacing-2) var(--spacing-3); /* 'squish' from the top means the sides bulge */
+  --padding-squeeze: var(--spacing-3) var(--spacing-2); /* 'squeeze' from the sides means the top and bottom bulge */
+  --padding-comfortable: var(--spacing-3) var(--spacing-3); /* 16px 16px */
+
+  /* Font Size */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  /* Line Height */
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.75;
+  --line-height-tight: 1.25;
+
+  /* Kerning */
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  --letter-spacing-tight: -0.05em;
+  --letter-spacing-tighter: -0.1em;
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Shadows */
+  --shadow-sm: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0px 10px 15px rgba(0, 0, 0, 0.15);
+
+  /* Interaction states  */
+  --hover-opacity: 0.8;
+  --focus-outline: 2px solid var(--primary-colour);
+  --disabled-opacity: 0.5;
+
+  /* Transitions */
+  --transition-duration-fast: 150ms;
+  --transition-duration-medium: 300ms;
+  --transition-duration-slow: 500ms;
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Focus ring */
+  --focus-ring: 2px solid var(--accent-colour);
+  --focus-ring-offset: 2px;
+
+  /* Icon size  */
+  --icon-size-sm: 16px;
+  --icon-size-md: 24px;
+  --icon-size-lg: 32px;
+}

@@ -6,56 +6,565 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface FabButton {
         /**
-          * The first name
+          * Additional classes to add to the button
+          * @default ''
          */
-        "first": string;
+        "class": string;
         /**
-          * The last name
+          * Disables the button if true
+          * @default false
          */
-        "last": string;
+        "disabled": boolean;
         /**
-          * The middle name
+          * The button sizes
+          * @default 'size-default' Options are 'size-default', 'sm', 'lg', and 'icon' (for icon-only buttons)
          */
-        "middle": string;
+        "size": 'size-default' | 'sm' | 'lg' | 'icon';
+        /**
+          * The button type
+          * @default 'button' Options are 'button', 'submit', and 'reset'
+         */
+        "type": 'button' | 'submit' | 'reset';
+        /**
+          * The button variants
+          * @default 'default' Options are 'default', 'destructive', 'outline', 'secondary', 'ghost', and 'link'
+         */
+        "variant": 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+    }
+    interface FabColourPalettes {
+    }
+    interface FabIcon {
+        /**
+          * The fill color for the SVG. Defaults to 'currentColor'.
+          * @default 'currentColor'
+         */
+        "fill": string;
+        /**
+          * The path to the SVG icon within the assets directory.
+         */
+        "src"?: string;
+        /**
+          * The stroke color for the SVG.
+         */
+        "stroke"?: string;
+    }
+    interface FabLayoutSidebar {
+    }
+    interface FabOption {
+        /**
+          * Description text for the option (for enhanced accessibility)
+         */
+        "description": string;
+        /**
+          * Whether the option is disabled
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * Optional icon class
+         */
+        "icon": string;
+        /**
+          * Optional image URL for the option
+         */
+        "imageUrl": string;
+        /**
+          * Whether the option is selected
+          * @default false
+         */
+        "selected": boolean;
+        /**
+          * The option value
+          * @default ''
+         */
+        "value": string;
+    }
+    interface FabPalette {
+        /**
+          * The base colour value (for dynamic generation). Default is 'var(--primary-colour)'.
+          * @default 'var(--primary-colour)'
+         */
+        "colourValue": string;
+    }
+    interface FabSelect {
+        /**
+          * If multiple, how many options will be shown in the collapsed state before showing "+X more"
+          * @default 2
+         */
+        "collapsedCount": number;
+        /**
+          * Whether the select is disabled
+          * @default false
+         */
+        "disabled": boolean;
+        "getValue": () => Promise<string | string[]>;
+        /**
+          * Whether multiple options can be selected
+          * @default false
+         */
+        "multiple": boolean;
+        /**
+          * The name of the form control (used for form submission)
+          * @default ''
+         */
+        "name": string;
+        /**
+          * Placeholder text to display when no option is selected
+          * @default 'Select an option'
+         */
+        "placeholder": string;
+        /**
+          * Whether the select is required
+          * @default false
+         */
+        "required": boolean;
+        "setValue": (value: string | string[]) => Promise<void>;
+    }
+    interface FabSidebar {
+    }
+    interface FabSidebarFooter {
+    }
+    interface FabSidebarHeader {
+        /**
+          * @default false
+         */
+        "collapsed": boolean;
+        /**
+          * @default 'moba-icon-logo.svg'
+         */
+        "logoIcon": string;
+        /**
+          * @default 'moba-text-logo.svg'
+         */
+        "logoText": string;
+    }
+    interface FabSidebarNavigation {
+    }
+    interface FabSidebarNavigationGroup {
+        "label"?: string;
+    }
+    interface FabSidebarNavigationItem {
+        /**
+          * The URL that the navigation item links to.
+          * @default '#'
+         */
+        "href": string;
+        /**
+          * The icon for the navigation item. This can be a URL to an SVG.
+         */
+        "icon"?: string;
+    }
+    interface FabSitePalette {
+        /**
+          * The base colour value (for dynamic generation). Default is 'var(--primary-colour)'.
+          * @default 'var(--primary-colour)'
+         */
+        "colourValue": string;
+    }
+    interface FabThemeSwitcher {
+    }
+    interface FabToggle {
+        /**
+          * Whether we show the indicator light
+         */
+        "showIndicator": boolean;
     }
 }
+export interface FabButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFabButtonElement;
+}
+export interface FabOptionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFabOptionElement;
+}
+export interface FabSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFabSelectElement;
+}
+export interface FabSidebarHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLFabSidebarHeaderElement;
+}
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLFabButtonElementEventMap {
+        "fabClick": MouseEvent;
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    interface HTMLFabButtonElement extends Components.FabButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFabButtonElementEventMap>(type: K, listener: (this: HTMLFabButtonElement, ev: FabButtonCustomEvent<HTMLFabButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFabButtonElementEventMap>(type: K, listener: (this: HTMLFabButtonElement, ev: FabButtonCustomEvent<HTMLFabButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFabButtonElement: {
+        prototype: HTMLFabButtonElement;
+        new (): HTMLFabButtonElement;
+    };
+    interface HTMLFabColourPalettesElement extends Components.FabColourPalettes, HTMLStencilElement {
+    }
+    var HTMLFabColourPalettesElement: {
+        prototype: HTMLFabColourPalettesElement;
+        new (): HTMLFabColourPalettesElement;
+    };
+    interface HTMLFabIconElement extends Components.FabIcon, HTMLStencilElement {
+    }
+    var HTMLFabIconElement: {
+        prototype: HTMLFabIconElement;
+        new (): HTMLFabIconElement;
+    };
+    interface HTMLFabLayoutSidebarElement extends Components.FabLayoutSidebar, HTMLStencilElement {
+    }
+    var HTMLFabLayoutSidebarElement: {
+        prototype: HTMLFabLayoutSidebarElement;
+        new (): HTMLFabLayoutSidebarElement;
+    };
+    interface HTMLFabOptionElementEventMap {
+        "fabOptionSelect": string;
+    }
+    interface HTMLFabOptionElement extends Components.FabOption, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFabOptionElementEventMap>(type: K, listener: (this: HTMLFabOptionElement, ev: FabOptionCustomEvent<HTMLFabOptionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFabOptionElementEventMap>(type: K, listener: (this: HTMLFabOptionElement, ev: FabOptionCustomEvent<HTMLFabOptionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFabOptionElement: {
+        prototype: HTMLFabOptionElement;
+        new (): HTMLFabOptionElement;
+    };
+    interface HTMLFabPaletteElement extends Components.FabPalette, HTMLStencilElement {
+    }
+    var HTMLFabPaletteElement: {
+        prototype: HTMLFabPaletteElement;
+        new (): HTMLFabPaletteElement;
+    };
+    interface HTMLFabSelectElementEventMap {
+        "fabChange": string | string[];
+    }
+    interface HTMLFabSelectElement extends Components.FabSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFabSelectElementEventMap>(type: K, listener: (this: HTMLFabSelectElement, ev: FabSelectCustomEvent<HTMLFabSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFabSelectElementEventMap>(type: K, listener: (this: HTMLFabSelectElement, ev: FabSelectCustomEvent<HTMLFabSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFabSelectElement: {
+        prototype: HTMLFabSelectElement;
+        new (): HTMLFabSelectElement;
+    };
+    interface HTMLFabSidebarElement extends Components.FabSidebar, HTMLStencilElement {
+    }
+    var HTMLFabSidebarElement: {
+        prototype: HTMLFabSidebarElement;
+        new (): HTMLFabSidebarElement;
+    };
+    interface HTMLFabSidebarFooterElement extends Components.FabSidebarFooter, HTMLStencilElement {
+    }
+    var HTMLFabSidebarFooterElement: {
+        prototype: HTMLFabSidebarFooterElement;
+        new (): HTMLFabSidebarFooterElement;
+    };
+    interface HTMLFabSidebarHeaderElementEventMap {
+        "toggleSidebar": void;
+    }
+    interface HTMLFabSidebarHeaderElement extends Components.FabSidebarHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLFabSidebarHeaderElementEventMap>(type: K, listener: (this: HTMLFabSidebarHeaderElement, ev: FabSidebarHeaderCustomEvent<HTMLFabSidebarHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLFabSidebarHeaderElementEventMap>(type: K, listener: (this: HTMLFabSidebarHeaderElement, ev: FabSidebarHeaderCustomEvent<HTMLFabSidebarHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLFabSidebarHeaderElement: {
+        prototype: HTMLFabSidebarHeaderElement;
+        new (): HTMLFabSidebarHeaderElement;
+    };
+    interface HTMLFabSidebarNavigationElement extends Components.FabSidebarNavigation, HTMLStencilElement {
+    }
+    var HTMLFabSidebarNavigationElement: {
+        prototype: HTMLFabSidebarNavigationElement;
+        new (): HTMLFabSidebarNavigationElement;
+    };
+    interface HTMLFabSidebarNavigationGroupElement extends Components.FabSidebarNavigationGroup, HTMLStencilElement {
+    }
+    var HTMLFabSidebarNavigationGroupElement: {
+        prototype: HTMLFabSidebarNavigationGroupElement;
+        new (): HTMLFabSidebarNavigationGroupElement;
+    };
+    interface HTMLFabSidebarNavigationItemElement extends Components.FabSidebarNavigationItem, HTMLStencilElement {
+    }
+    var HTMLFabSidebarNavigationItemElement: {
+        prototype: HTMLFabSidebarNavigationItemElement;
+        new (): HTMLFabSidebarNavigationItemElement;
+    };
+    interface HTMLFabSitePaletteElement extends Components.FabSitePalette, HTMLStencilElement {
+    }
+    var HTMLFabSitePaletteElement: {
+        prototype: HTMLFabSitePaletteElement;
+        new (): HTMLFabSitePaletteElement;
+    };
+    interface HTMLFabThemeSwitcherElement extends Components.FabThemeSwitcher, HTMLStencilElement {
+    }
+    var HTMLFabThemeSwitcherElement: {
+        prototype: HTMLFabThemeSwitcherElement;
+        new (): HTMLFabThemeSwitcherElement;
+    };
+    interface HTMLFabToggleElement extends Components.FabToggle, HTMLStencilElement {
+    }
+    var HTMLFabToggleElement: {
+        prototype: HTMLFabToggleElement;
+        new (): HTMLFabToggleElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "fab-button": HTMLFabButtonElement;
+        "fab-colour-palettes": HTMLFabColourPalettesElement;
+        "fab-icon": HTMLFabIconElement;
+        "fab-layout-sidebar": HTMLFabLayoutSidebarElement;
+        "fab-option": HTMLFabOptionElement;
+        "fab-palette": HTMLFabPaletteElement;
+        "fab-select": HTMLFabSelectElement;
+        "fab-sidebar": HTMLFabSidebarElement;
+        "fab-sidebar-footer": HTMLFabSidebarFooterElement;
+        "fab-sidebar-header": HTMLFabSidebarHeaderElement;
+        "fab-sidebar-navigation": HTMLFabSidebarNavigationElement;
+        "fab-sidebar-navigation-group": HTMLFabSidebarNavigationGroupElement;
+        "fab-sidebar-navigation-item": HTMLFabSidebarNavigationItemElement;
+        "fab-site-palette": HTMLFabSitePaletteElement;
+        "fab-theme-switcher": HTMLFabThemeSwitcherElement;
+        "fab-toggle": HTMLFabToggleElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface FabButton {
         /**
-          * The first name
+          * Additional classes to add to the button
+          * @default ''
          */
-        "first"?: string;
+        "class"?: string;
         /**
-          * The last name
+          * Disables the button if true
+          * @default false
          */
-        "last"?: string;
+        "disabled"?: boolean;
         /**
-          * The middle name
+          * Emitted when the button is clicked
+          * @event fabClick
          */
-        "middle"?: string;
+        "onFabClick"?: (event: FabButtonCustomEvent<MouseEvent>) => void;
+        /**
+          * The button sizes
+          * @default 'size-default' Options are 'size-default', 'sm', 'lg', and 'icon' (for icon-only buttons)
+         */
+        "size"?: 'size-default' | 'sm' | 'lg' | 'icon';
+        /**
+          * The button type
+          * @default 'button' Options are 'button', 'submit', and 'reset'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * The button variants
+          * @default 'default' Options are 'default', 'destructive', 'outline', 'secondary', 'ghost', and 'link'
+         */
+        "variant"?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+    }
+    interface FabColourPalettes {
+    }
+    interface FabIcon {
+        /**
+          * The fill color for the SVG. Defaults to 'currentColor'.
+          * @default 'currentColor'
+         */
+        "fill"?: string;
+        /**
+          * The path to the SVG icon within the assets directory.
+         */
+        "src"?: string;
+        /**
+          * The stroke color for the SVG.
+         */
+        "stroke"?: string;
+    }
+    interface FabLayoutSidebar {
+    }
+    interface FabOption {
+        /**
+          * Description text for the option (for enhanced accessibility)
+         */
+        "description"?: string;
+        /**
+          * Whether the option is disabled
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * Optional icon class
+         */
+        "icon"?: string;
+        /**
+          * Optional image URL for the option
+         */
+        "imageUrl"?: string;
+        /**
+          * Emitted when option is selected
+         */
+        "onFabOptionSelect"?: (event: FabOptionCustomEvent<string>) => void;
+        /**
+          * Whether the option is selected
+          * @default false
+         */
+        "selected"?: boolean;
+        /**
+          * The option value
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface FabPalette {
+        /**
+          * The base colour value (for dynamic generation). Default is 'var(--primary-colour)'.
+          * @default 'var(--primary-colour)'
+         */
+        "colourValue"?: string;
+    }
+    interface FabSelect {
+        /**
+          * If multiple, how many options will be shown in the collapsed state before showing "+X more"
+          * @default 2
+         */
+        "collapsedCount"?: number;
+        /**
+          * Whether the select is disabled
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * Whether multiple options can be selected
+          * @default false
+         */
+        "multiple"?: boolean;
+        /**
+          * The name of the form control (used for form submission)
+          * @default ''
+         */
+        "name"?: string;
+        /**
+          * Emitted when selection changes
+         */
+        "onFabChange"?: (event: FabSelectCustomEvent<string | string[]>) => void;
+        /**
+          * Placeholder text to display when no option is selected
+          * @default 'Select an option'
+         */
+        "placeholder"?: string;
+        /**
+          * Whether the select is required
+          * @default false
+         */
+        "required"?: boolean;
+    }
+    interface FabSidebar {
+    }
+    interface FabSidebarFooter {
+    }
+    interface FabSidebarHeader {
+        /**
+          * @default false
+         */
+        "collapsed"?: boolean;
+        /**
+          * @default 'moba-icon-logo.svg'
+         */
+        "logoIcon"?: string;
+        /**
+          * @default 'moba-text-logo.svg'
+         */
+        "logoText"?: string;
+        "onToggleSidebar"?: (event: FabSidebarHeaderCustomEvent<void>) => void;
+    }
+    interface FabSidebarNavigation {
+    }
+    interface FabSidebarNavigationGroup {
+        "label"?: string;
+    }
+    interface FabSidebarNavigationItem {
+        /**
+          * The URL that the navigation item links to.
+          * @default '#'
+         */
+        "href"?: string;
+        /**
+          * The icon for the navigation item. This can be a URL to an SVG.
+         */
+        "icon"?: string;
+    }
+    interface FabSitePalette {
+        /**
+          * The base colour value (for dynamic generation). Default is 'var(--primary-colour)'.
+          * @default 'var(--primary-colour)'
+         */
+        "colourValue"?: string;
+    }
+    interface FabThemeSwitcher {
+    }
+    interface FabToggle {
+        /**
+          * Whether we show the indicator light
+         */
+        "showIndicator"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "fab-button": FabButton;
+        "fab-colour-palettes": FabColourPalettes;
+        "fab-icon": FabIcon;
+        "fab-layout-sidebar": FabLayoutSidebar;
+        "fab-option": FabOption;
+        "fab-palette": FabPalette;
+        "fab-select": FabSelect;
+        "fab-sidebar": FabSidebar;
+        "fab-sidebar-footer": FabSidebarFooter;
+        "fab-sidebar-header": FabSidebarHeader;
+        "fab-sidebar-navigation": FabSidebarNavigation;
+        "fab-sidebar-navigation-group": FabSidebarNavigationGroup;
+        "fab-sidebar-navigation-item": FabSidebarNavigationItem;
+        "fab-site-palette": FabSitePalette;
+        "fab-theme-switcher": FabThemeSwitcher;
+        "fab-toggle": FabToggle;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "fab-button": LocalJSX.FabButton & JSXBase.HTMLAttributes<HTMLFabButtonElement>;
+            "fab-colour-palettes": LocalJSX.FabColourPalettes & JSXBase.HTMLAttributes<HTMLFabColourPalettesElement>;
+            "fab-icon": LocalJSX.FabIcon & JSXBase.HTMLAttributes<HTMLFabIconElement>;
+            "fab-layout-sidebar": LocalJSX.FabLayoutSidebar & JSXBase.HTMLAttributes<HTMLFabLayoutSidebarElement>;
+            "fab-option": LocalJSX.FabOption & JSXBase.HTMLAttributes<HTMLFabOptionElement>;
+            "fab-palette": LocalJSX.FabPalette & JSXBase.HTMLAttributes<HTMLFabPaletteElement>;
+            "fab-select": LocalJSX.FabSelect & JSXBase.HTMLAttributes<HTMLFabSelectElement>;
+            "fab-sidebar": LocalJSX.FabSidebar & JSXBase.HTMLAttributes<HTMLFabSidebarElement>;
+            "fab-sidebar-footer": LocalJSX.FabSidebarFooter & JSXBase.HTMLAttributes<HTMLFabSidebarFooterElement>;
+            "fab-sidebar-header": LocalJSX.FabSidebarHeader & JSXBase.HTMLAttributes<HTMLFabSidebarHeaderElement>;
+            "fab-sidebar-navigation": LocalJSX.FabSidebarNavigation & JSXBase.HTMLAttributes<HTMLFabSidebarNavigationElement>;
+            "fab-sidebar-navigation-group": LocalJSX.FabSidebarNavigationGroup & JSXBase.HTMLAttributes<HTMLFabSidebarNavigationGroupElement>;
+            "fab-sidebar-navigation-item": LocalJSX.FabSidebarNavigationItem & JSXBase.HTMLAttributes<HTMLFabSidebarNavigationItemElement>;
+            "fab-site-palette": LocalJSX.FabSitePalette & JSXBase.HTMLAttributes<HTMLFabSitePaletteElement>;
+            "fab-theme-switcher": LocalJSX.FabThemeSwitcher & JSXBase.HTMLAttributes<HTMLFabThemeSwitcherElement>;
+            "fab-toggle": LocalJSX.FabToggle & JSXBase.HTMLAttributes<HTMLFabToggleElement>;
         }
     }
 }

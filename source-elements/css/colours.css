@@ -1,0 +1,28 @@
+@layer theme {
+  :root {
+    --surface-900: #201d1d;
+    --surface-800: #353131;
+    --surface-700: #504949;
+    --surface-600: #6b6b6b;
+
+    --surface-on: #ededed;
+
+    --brand-colour: #ff9012;
+    --brand-colour-hover: #ffb84d;
+
+    --accent-colour: #bc2912;
+    --accent-colour-hover: #d65c3b;
+  }
+}
+
+@layer colours {
+  :root {
+    --bg-colour: var(--surface-900);
+    --text-colour: var(--surface-on);
+    --link-colour: var(--brand-colour);
+    --link-hover-colour: var(--brand-colour-hover);
+    --accent-colour: var(--accent-colour);
+    --accent-hover-colour: var(--accent-colour-hover);
+    --border-colour: var(--surface-600);
+  }
+}
