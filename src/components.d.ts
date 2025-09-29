@@ -162,6 +162,17 @@ export namespace Components {
           * @default 'var(--primary-colour)'
          */
         "colourValue": string;
+        /**
+          * The colour harmony to display. Options are 'complementary', 'analogous', 'triadic', 'tetradic', 'split', and 'neutral'. Default is 'complementary'.
+          * @default 'complementary'
+         */
+        "harmony": 'complementary' | 'analogous' | 'triadic' | 'tetradic' | 'split' | 'neutral';
+        /**
+          * @default true
+         */
+        "showHarmonies": boolean;
+    }
+    interface FabSkeuSwitch {
     }
     interface FabThemeSwitcher {
     }
@@ -317,6 +328,12 @@ declare global {
         prototype: HTMLFabSitePaletteElement;
         new (): HTMLFabSitePaletteElement;
     };
+    interface HTMLFabSkeuSwitchElement extends Components.FabSkeuSwitch, HTMLStencilElement {
+    }
+    var HTMLFabSkeuSwitchElement: {
+        prototype: HTMLFabSkeuSwitchElement;
+        new (): HTMLFabSkeuSwitchElement;
+    };
     interface HTMLFabThemeSwitcherElement extends Components.FabThemeSwitcher, HTMLStencilElement {
     }
     var HTMLFabThemeSwitcherElement: {
@@ -344,6 +361,7 @@ declare global {
         "fab-sidebar-navigation-group": HTMLFabSidebarNavigationGroupElement;
         "fab-sidebar-navigation-item": HTMLFabSidebarNavigationItemElement;
         "fab-site-palette": HTMLFabSitePaletteElement;
+        "fab-skeu-switch": HTMLFabSkeuSwitchElement;
         "fab-theme-switcher": HTMLFabThemeSwitcherElement;
         "fab-toggle": HTMLFabToggleElement;
     }
@@ -517,6 +535,17 @@ declare namespace LocalJSX {
           * @default 'var(--primary-colour)'
          */
         "colourValue"?: string;
+        /**
+          * The colour harmony to display. Options are 'complementary', 'analogous', 'triadic', 'tetradic', 'split', and 'neutral'. Default is 'complementary'.
+          * @default 'complementary'
+         */
+        "harmony"?: 'complementary' | 'analogous' | 'triadic' | 'tetradic' | 'split' | 'neutral';
+        /**
+          * @default true
+         */
+        "showHarmonies"?: boolean;
+    }
+    interface FabSkeuSwitch {
     }
     interface FabThemeSwitcher {
     }
@@ -541,6 +570,7 @@ declare namespace LocalJSX {
         "fab-sidebar-navigation-group": FabSidebarNavigationGroup;
         "fab-sidebar-navigation-item": FabSidebarNavigationItem;
         "fab-site-palette": FabSitePalette;
+        "fab-skeu-switch": FabSkeuSwitch;
         "fab-theme-switcher": FabThemeSwitcher;
         "fab-toggle": FabToggle;
     }
@@ -563,6 +593,7 @@ declare module "@stencil/core" {
             "fab-sidebar-navigation-group": LocalJSX.FabSidebarNavigationGroup & JSXBase.HTMLAttributes<HTMLFabSidebarNavigationGroupElement>;
             "fab-sidebar-navigation-item": LocalJSX.FabSidebarNavigationItem & JSXBase.HTMLAttributes<HTMLFabSidebarNavigationItemElement>;
             "fab-site-palette": LocalJSX.FabSitePalette & JSXBase.HTMLAttributes<HTMLFabSitePaletteElement>;
+            "fab-skeu-switch": LocalJSX.FabSkeuSwitch & JSXBase.HTMLAttributes<HTMLFabSkeuSwitchElement>;
             "fab-theme-switcher": LocalJSX.FabThemeSwitcher & JSXBase.HTMLAttributes<HTMLFabThemeSwitcherElement>;
             "fab-toggle": LocalJSX.FabToggle & JSXBase.HTMLAttributes<HTMLFabToggleElement>;
         }

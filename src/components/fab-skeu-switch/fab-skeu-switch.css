@@ -1,0 +1,228 @@
+:host {
+  /* Size driver: change component font-size or override --lever-diameter to scale entire control */
+  --lever-diameter: 12em; /* visual diameter of the circular plate */
+  --transition-dur: 0.03s; /* full lever travel time */
+  --transition-dur-mid: 0.1s; /* midpoint easing segment for LED fade */
+  /* LED semantic colors (override for theming) */
+  --led-green-off: #050; /* idle green emitter (becomes on when checked) */
+  --led-green-on: #0d0; /* bright active green */
+  --led-red-off: #500; /* idle red (fades when green active) */
+  --led-red-on: #f00; /* bright red (active when unchecked) */
+  font-size: 10px; /* baseline so 1em inside equals 10px; host page can scale */
+  display: inline-block;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(var(--lever-diameter) + 11em);
+  gap: 1.75em;
+  margin: 0;
+}
+
+/* LED labels */
+label {
+  background-color: var(--led-red-on);
+  background-image: radial-gradient(0.3em 0.25em at 50% 25%, #ffffff 25%, #ffffff00), radial-gradient(0.25em 0.25em at 30% 75%, #ffffff80, #ffffff00),
+    radial-gradient(0.3em 0.3em at 60% 80%, #ffffff80, #ffffff00), radial-gradient(100% 100%, #ffffff00 30%, #ffffff4d 40%, #00000080 50%);
+  border-radius: 50%;
+  box-shadow: 0 0 0.75em var(--led-red-on), 0 0.5em 0.75em #0000004d;
+  display: inline-block;
+  transition: all var(--transition-dur-mid) var(--transition-dur-mid) linear;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+label:first-of-type {
+  background-color: var(--led-green-off);
+  box-shadow: 0 0.5em 0.75em #0000004d;
+  order: -1;
+}
+label span {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+}
+
+/* Lever (checkbox) */
+input.lever {
+
+  background-image: 
+  /* connects lever to ball */
+  radial-gradient(calc(var(--lever-diameter) * 0.1) calc(var(--lever-diameter) * 0.125) at 50% 50%, #cccccc 25%, #aaaaaa 49%, #aaaaaa00 50%),
+  /* shadow for above */
+    radial-gradient(calc(var(--lever-diameter) * 0.065) calc(var(--lever-diameter) * 0.1) at 50% 53%, #444, #4440), 
+    /* specular highlights on ball */
+    radial-gradient(calc(var(--lever-diameter) * 0.075) calc(var(--lever-diameter) * 0.075) at 55% 45%, #ffffff, #ffffff00),
+    radial-gradient(calc(var(--lever-diameter) * 0.05) calc(var(--lever-diameter) * 0.04) at 43% 56%, #ffffff80, #ffffff00), 
+    radial-gradient(calc(var(--lever-diameter) * 0.05) calc(var(--lever-diameter) * 0.04) at 55% 57%, #ffffff99, #ffffff00),
+    radial-gradient(calc(var(--lever-diameter) * 0.05) calc(var(--lever-diameter) * 0.04) at 50% 60%, #ffffff99, #ffffff00),
+    /* contour and texture of lever plate */
+    radial-gradient(
+      100% 100% at 50% 50%,
+      #eeeeee,
+      #aaaaaa 10%,
+      #000 18%,
+      #000 21%,
+      #999 21.5%,
+      #999 24%,
+      #9990 24.5%,
+      #ddd0 30%,
+      #ddd 30.5%,
+      #ddd 33%,
+      #444 33.5%,
+      #444 35%,
+      #4440 35.5%,
+      #ddd0 41%,
+      #ddd 41.5%,
+      #eeeeee 45%,
+      #444 45.5%,
+      #444 49%,
+      #4440 50%
+    ),
+    /* surface texture on outer plate */
+    radial-gradient(2em 2em at 35% 20%, #ffffff, #ffffff00 2em), radial-gradient(2em 2em at 65% 80%, #ffffff, #ffffff00 2em),
+    radial-gradient(2em 2em at 80% 35%, #ffffff, #ffffff00 2em), radial-gradient(2em 2em at 20% 65%, #ffffff, #ffffff00 2em),
+    radial-gradient(100% 100% at center, #aaaaaa 49%, #aaaaaa00 50%);
+  background-position: 0.5em 0, 0.5em 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  border-radius: 50%;
+  box-shadow: 0 2em 2em #0000004d;
+  cursor: pointer;
+  font-size: 1em;
+  display: block;
+  outline: 0;
+  position: relative;
+  width: var(--lever-diameter);
+  height: var(--lever-diameter);
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background-position var(--transition-dur) linear;
+  margin: 0 1em;
+}
+input.lever:before,
+input.lever:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+}
+
+/* ball on end of lever */
+input.lever:before {
+  animation: leverAOff var(--transition-dur) linear forwards;
+  background: radial-gradient(35% 25% at 50% 25%, #888899 20%, #88889900), radial-gradient(1em 0.75em at 32% 75%, #666, #6660), radial-gradient(1em 0.75em at 65% 78%, #666, #6660),
+    radial-gradient(100% 100% at center, #444 49.5%, #4440 50%);
+  box-shadow: -2em 4em 2em #0000004d, -2em 5em 4em #00000033, -2em 7em 4em #00000033, -2em 9em 4em #00000033, -2em 11em 4em #00000033;
+  border-radius: 50%;
+  width: calc(var(--lever-diameter) / 3);
+  height: calc(var(--lever-diameter) / 3);
+  transform: translate(100%, -50%);
+  z-index: 1;
+}
+
+input.lever:after {
+  animation: leverBOff var(--transition-dur) linear forwards;
+  background-color: #333;
+  border-radius: 15em;
+  box-shadow: 0 0 1em #667 inset;
+  width: calc(var(--lever-diameter) * 0.625);
+  height: calc(var(--lever-diameter)  * 0.33);
+  transform: translate(0.5em, -50%);
+}
+input.lever:checked {
+  background-position: -0.5em 0, -0.5em 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+}
+input.lever:checked:before {
+  animation: leverAOn var(--transition-dur) linear forwards;
+}
+input.lever:checked:after {
+  animation: leverBOn var(--transition-dur) linear forwards;
+}
+
+/* LED state changes based on checkbox position (source order labels after input) */
+input.lever:checked + label {
+  /* first label = ON LED */
+  background-color: var(--led-green-on);
+  box-shadow: 0 0 0.75em var(--led-green-on), 0 0.5em 0.75em #0000004d;
+}
+input.lever:checked + label + label {
+  /* OFF LED fades */
+  background-color: var(--led-red-off);
+  box-shadow: 0 0.5em 0.75em #0000004d;
+}
+
+/* Prevent animation on initial load until first interaction */
+input.lever.pristine:before,
+input.lever.pristine:after {
+  animation: none;
+}
+
+/* Keyframes */
+@keyframes leverAOn {
+  from {
+    box-shadow: -2em 4em 2em #0000004d, -2em 5em 4em #00000033, -2em 7em 4em #00000033, -2em 9em 4em #00000033, -2em 11em 4em #00000033;
+    transform: translate(100%, -50%);
+  }
+  50% {
+    box-shadow: 0 6em 2em #0000004d, 0 5em 4em #00000033, 0 7em 4em #00000033, 0 9em 4em #00000033, 0 11em 4em #00000033;
+  }
+  to {
+    box-shadow: 2em 4em 2em #0000004d, 2em 5em 4em #00000033, 2em 7em 4em #00000033, 2em 9em 4em #00000033, 2em 11em 4em #00000033;
+    transform: translate(-200%, -50%);
+  }
+}
+@keyframes leverAOff {
+  from {
+    box-shadow: 2em 4em 2em #0000004d, 2em 5em 4em #00000033, 2em 7em 4em #00000033, 2em 9em 4em #00000033, 2em 11em 4em #00000033;
+    transform: translate(-200%, -50%);
+  }
+  50% {
+    box-shadow: 0 6em 2em #0000004d, 0 5em 4em #00000033, 0 7em 4em #00000033, 0 9em 4em #00000033, 0 11em 4em #00000033;
+  }
+  to {
+    box-shadow: -2em 4em 2em #0000004d, -2em 5em 4em #00000033, -2em 7em 4em #00000033, -2em 9em 4em #00000033, -2em 11em 4em #00000033;
+    transform: translate(100%, -50%);
+  }
+}
+@keyframes leverBOn {
+  from {
+    width: calc(var(--lever-diameter) * 0.625); /* 7.5/12 */
+    transform: translate(calc(var(--lever-diameter) * 0.0417), -50%); /* 0.5/12 */
+  }
+  50% {
+    width: calc(var(--lever-diameter) * 0.333); /* 4/12 */
+    transform: translate(-50%, -50%);
+  }
+  to {
+    width: calc(var(--lever-diameter) * 0.625); /* 7.5/12 */
+    transform: translate(calc(var(--lever-diameter) * -0.6667), -50%); /* -8/12 */
+  }
+}
+
+@keyframes leverBOff {
+  from {
+    width: calc(var(--lever-diameter) * 0.625);
+    transform: translate(calc(var(--lever-diameter) * -0.6667), -50%);
+  }
+  50% {
+    width: calc(var(--lever-diameter) * 0.333);
+    transform: translate(-50%, -50%);
+  }
+  to {
+    width: calc(var(--lever-diameter) * 0.625);
+    transform: translate(calc(var(--lever-diameter) * 0.0417), -50%);
+  }
+}
+
+/* Accessibility focus */
+input.lever:focus-visible {
+  outline: 2px solid #4da3ff;
+  outline-offset: 4px;
+}
+/* Remove default tap highlight on mobile */
+input.lever,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
