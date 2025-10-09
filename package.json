@@ -34,15 +34,21 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "generate:palettes": "node scripts/generate-palettes.js",
-    "prebuild": "npm run generate:palettes"
+    "gen:palettes": "node scripts/gen-palettes.js",
+    "copy:config": "node -e \"require('fs').copyFileSync('scripts/palettes.config.json', 'www/palettes.config.json')\"",
+    "prebuild": "npm run generate:palettes && npm run gen:palettes && npm run copy:config"
   },
   "devDependencies": {
-    "@stencil/core": "^4.37.0",
+    "@stencil/core": "^4.38.0",
+    "@stencil/store": "^2.2.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.5",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
     "puppeteer": "^24.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chroma-js": "^3.1.2"
+  }
 }

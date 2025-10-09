@@ -8,168 +8,111 @@
     <script type="module" src="/build/fab-components.esm.js"></script>
     <script nomodule src="/build/fab-components.js"></script>
     <link rel="stylesheet" href="/build/fab-components.css" />
-   
   </head>
   <body>
-            <fab-site-palette></fab-site-palette>
+    <fab-sidebar>
+      <fab-sidebar-header>
+        <svg
+          class="logo-icon"
+          width="100%"
+          height="100%"
+          viewBox="0 0 186 207"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2"
+        >
+          <path
+            d="M170.276,103.463c5.466,7.162 9.521,15.159 9.521,23.592c0,1.212 -0.037,2.392 -0.113,3.541l5.376,0.328c0.487,2.335 0.291,15.089 -0.627,18.579l-10.645,-0.649c-2.58,3.875 -6.023,7.407 -10.39,10.798l13.156,4.387c-2.881,3.255 -14.646,11.84 -17.569,13.73l-15.241,-5.082c-4.251,2.704 -8.958,5.679 -13.769,8.709l13.769,7.721l-20.315,13.403l-14.322,-8.031c-11.044,6.907 -19.428,12.121 -19.428,12.121l-20.102,-10.782c13.97,-7.698 43.234,-23.864 62.998,-35.07c11.755,-6.665 21.969,-11.282 29.824,-24.068c4.52,-7.358 6.998,-17.631 7.877,-33.227Zm-120.911,79.136c-28.931,-8.162 -49.365,-27.581 -49.365,-47.544l-0,-105c-0,-18.244 35.346,-30.055 78.883,-30.055c43.536,-0 78.882,11.811 78.882,30.055l0,56.354l-0.08,-0c0.009,8.307 -0,8.361 -0,9.083c-0,41.483 -17.083,43.946 -33.286,53.012c-2.574,1.44 -34.417,14.549 -65.989,29.701c-4.754,2.282 -6.542,3.152 -9.045,4.394Zm94.138,-97.689c-5.973,11.447 -32.652,20.09 -64.62,20.09c-31.969,0 -58.648,-8.643 -64.621,-20.09l0,5.337c0,14.605 28.956,26.463 64.621,26.463c35.664,-0 64.62,-11.858 64.62,-26.463l-0,-5.337Zm-94.36,72.833c6.445,-3.09 13.005,-6.147 19.35,-9.052c-27.225,-1.636 -48.919,-9.6 -54.231,-19.781l0,5.337c0,10.215 14.164,19.086 34.881,23.496Zm94.36,-119.833c-5.973,11.447 -32.652,20.09 -64.62,20.09c-31.969,0 -58.648,-8.643 -64.621,-20.09l0,5.337c0,14.605 28.956,26.463 64.621,26.463c35.664,-0 64.62,-11.858 64.62,-26.463l-0,-5.337Z"
+            style="fill: var(--primary-colour)"
+          />
+        </svg>
 
-    <fab-layout-sidebar>
-      <fab-sidebar>
-        <fab-sidebar-header slot="header"></fab-sidebar-header>
-        <fab-sidebar-navigation>
-          <fab-sidebar-navigation-group label="Inventory">
-            <fab-sidebar-navigation-item submenu-key="locomotives">
+        <svg
+          class="logo-text"
+          width="100%"
+          height="100%"
+          viewBox="0 0 579 207"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2; fill: var(--text-colour)"
+        >
+          <g>
+            <path
+              d="M15.317,42.652l0,79.191l-15.168,0l0,-121.843l14.581,0l24.637,76.508l25.223,-76.508l13.995,0l0,121.843l-14.581,0l0,-82.348l-19.525,62.404l-10.224,0l-18.938,-59.247Z"
+            />
+            <path
+              d="M112.781,123.1c-7.933,-0 -14.106,-2.207 -18.519,-6.62c-4.414,-4.413 -6.62,-10.615 -6.62,-18.603l0,-39.721c0,-7.933 2.206,-14.05 6.62,-18.352c4.413,-4.301 10.586,-6.452 18.519,-6.452c7.933,-0 14.05,2.151 18.352,6.452c4.302,4.302 6.453,10.419 6.453,18.352l0,39.972c0,7.933 -2.151,14.078 -6.453,18.436c-4.302,4.357 -10.419,6.536 -18.352,6.536Zm-0.167,-15.503c2.849,-0 5.069,-0.88 6.662,-2.639c1.592,-1.76 2.388,-4.26 2.388,-7.5l0,-38.631c0,-3.129 -0.796,-5.573 -2.388,-7.333c-1.593,-1.76 -3.813,-2.639 -6.662,-2.639c-2.794,-0 -5,0.879 -6.621,2.639c-1.62,1.76 -2.43,4.204 -2.43,7.333l0,38.631c0,3.24 0.81,5.74 2.43,7.5c1.621,1.759 3.827,2.639 6.621,2.639Z"
+              style="fill-rule: nonzero"
+            />
+            <path
+              d="M182.173,111.251c-1.495,3.354 -3.478,6.061 -5.95,8.12c-3.184,2.654 -6.927,3.98 -11.229,3.98c-6.089,-0 -10.81,-2.262 -14.162,-6.787c-3.352,-4.525 -5.028,-10.922 -5.028,-19.19l0,-37.123c0,-8.547 1.676,-15.167 5.028,-19.86c3.352,-4.693 8.073,-7.039 14.162,-7.039c3.967,-0 7.598,1.341 10.894,4.022c2.428,1.976 4.524,4.543 6.285,7.702l0,-45.076l15.922,-0l0,121.843l-15.922,-0l0,-10.592Zm0,-50.162c0,-2.737 -0.391,-5.056 -1.173,-6.955c-0.782,-1.9 -1.941,-3.366 -3.478,-4.4c-1.536,-1.033 -3.394,-1.55 -5.572,-1.55c-3.185,-0 -5.685,1.131 -7.5,3.394c-1.816,2.263 -2.724,5.461 -2.724,9.595l0,35.53c0,3.743 0.908,6.648 2.724,8.716c1.815,2.067 4.315,3.1 7.5,3.1c2.178,-0 4.036,-0.489 5.572,-1.466c1.537,-0.978 2.696,-2.403 3.478,-4.274c0.782,-1.872 1.173,-4.12 1.173,-6.746l0,-34.944Z"
+            />
+            <path
+              d="M223.241,84.553l-0,10.139c-0,4.246 0.978,7.556 2.933,9.93c1.955,2.375 4.721,3.562 8.296,3.562c3.296,0 5.852,-0.88 7.668,-2.64c1.815,-1.76 2.723,-4.26 2.723,-7.5l-0,-0.586l15.251,0l-0,0.586c-0,7.933 -2.234,14.092 -6.704,18.478c-4.469,4.385 -10.782,6.578 -18.938,6.578c-8.38,0 -14.888,-2.514 -19.525,-7.542c-4.637,-5.028 -6.955,-12.123 -6.955,-21.285l-0,-30.419c-0,-9.72 2.262,-17.234 6.787,-22.541c4.525,-5.308 10.866,-7.961 19.023,-7.961c8.324,0 14.748,2.458 19.273,7.374c4.525,4.916 6.788,11.872 6.788,20.866l0,22.961l-36.62,-0Zm0,-13.157l21.369,-0l0,-9.469c0,-4.525 -0.936,-8.017 -2.808,-10.475c-1.871,-2.458 -4.539,-3.687 -8.002,-3.687c-3.352,-0 -5.95,1.313 -7.794,3.939c-1.843,2.625 -2.765,6.368 -2.765,11.229l0,8.463Z"
+            />
+            <path
+              d="M285.929,0l-0,98.798c-0,2.514 0.545,4.47 1.634,5.866c1.089,1.397 2.668,2.095 4.735,2.095l4.776,0l-0,15.084l-6.704,0c-6.424,0 -11.424,-2.011 -15,-6.033c-3.575,-4.023 -5.363,-9.693 -5.363,-17.012l-0,-98.798l15.922,0Z"
+              style="fill-rule: nonzero"
+            />
+            <path
+              d="M318.701,0l0,98.798c0,2.514 0.545,4.47 1.634,5.866c1.089,1.397 2.668,2.095 4.735,2.095l4.776,0l0,15.084l-6.704,0c-6.424,0 -11.424,-2.011 -15,-6.033c-3.575,-4.023 -5.363,-9.693 -5.363,-17.012l0,-98.798l15.922,0Z"
+              style="fill-rule: nonzero"
+            />
+            <path
+              d="M351.473,111.651l0,10.192l-15.922,0l0,-121.843l15.922,0l0,45.203c1.619,-3.159 3.616,-5.727 5.991,-7.703c3.324,-2.766 6.942,-4.148 10.852,-4.148c6.257,-0 11.076,2.402 14.456,7.206c3.379,4.805 5.069,11.621 5.069,20.447l-0,33.939c-0,8.938 -1.773,15.866 -5.321,20.782c-3.547,4.916 -8.561,7.374 -15.042,7.374c-4.078,0 -7.639,-1.299 -10.684,-3.897c-2.258,-1.926 -4.031,-4.443 -5.321,-7.552Zm0,-50.31l0,33.351c0,2.905 0.405,5.391 1.215,7.458c0.81,2.067 1.969,3.646 3.478,4.735c1.508,1.089 3.351,1.634 5.53,1.634c3.185,0 5.685,-1.243 7.5,-3.729c1.816,-2.486 2.724,-5.964 2.724,-10.433l0,-32.681c0,-4.302 -0.908,-7.668 -2.724,-10.098c-1.815,-2.43 -4.315,-3.645 -7.5,-3.645c-2.179,0 -4.022,0.53 -5.53,1.592c-1.509,1.061 -2.668,2.584 -3.478,4.567c-0.81,1.983 -1.215,4.399 -1.215,7.249Z"
+            />
+            <path
+              d="M433.77,113.781c-0.094,0.233 -0.192,0.463 -0.294,0.688c-1.312,2.905 -3.268,5.07 -5.866,6.494c-2.597,1.425 -5.824,2.137 -9.678,2.137c-7.095,0 -12.444,-2.025 -16.048,-6.075c-3.603,-4.051 -5.405,-10.154 -5.405,-18.31c-0,-9.777 2.249,-17.081 6.746,-21.914c4.497,-4.832 11.215,-7.248 20.154,-7.248l10.391,0l-0,-11.313c-0,-3.52 -0.936,-6.243 -2.808,-8.17c-1.871,-1.928 -4.483,-2.891 -7.835,-2.891c-2.905,0 -5.195,0.963 -6.871,2.891c-1.676,1.927 -2.514,4.65 -2.514,8.17l-15.503,0c-0,-7.933 2.207,-14.064 6.62,-18.394c4.414,-4.329 10.643,-6.494 18.687,-6.494c8.157,0 14.483,2.165 18.981,6.494c4.497,4.33 6.745,10.461 6.745,18.394l-0,63.603l-15.502,0l-0,-8.062Zm-0,-29.983l-10.308,0c-3.91,0 -6.843,1.244 -8.798,3.73c-1.956,2.486 -2.933,6.215 -2.933,11.187c-0,3.407 0.852,5.949 2.555,7.625c1.704,1.676 4.26,2.514 7.668,2.514c3.967,0 6.927,-1.103 8.883,-3.31c1.955,-2.206 2.933,-5.517 2.933,-9.93l-0,-11.816Z"
+            />
+            <path
+              d="M476.765,61.843l0,60l-15.922,0l0,-121.843l15.922,0l0,45.418c1.76,-3.492 3.911,-6.201 6.452,-8.128c3.464,-2.625 7.375,-3.938 11.732,-3.938c6.145,0 10.852,2.011 14.12,6.033c3.268,4.023 4.903,9.833 4.903,17.43l0,65.028l-15.922,0l0,-60.419c0,-4.469 -0.88,-7.793 -2.64,-9.972c-1.76,-2.178 -4.427,-3.268 -8.003,-3.268c-3.575,0 -6.243,1.131 -8.002,3.394c-1.76,2.263 -2.64,5.684 -2.64,10.265Z"
+            />
+            <path
+              d="M541.464,62.011l0,59.832l-15.922,0l0,-86.983l15.922,0l0,10.559c1.76,-3.492 3.911,-6.202 6.453,-8.129c3.463,-2.625 7.374,-3.938 11.731,-3.938c6.146,-0 10.852,2.011 14.12,6.033c3.269,4.023 4.903,9.833 4.903,17.43l0,65.028l-15.922,0l0,-60.335c0,-4.469 -0.88,-7.807 -2.64,-10.014c-1.759,-2.207 -4.427,-3.31 -8.002,-3.31c-3.576,0 -6.243,1.145 -8.003,3.436c-1.76,2.29 -2.64,5.754 -2.64,10.391Z"
+            />
+            <path
+              d="M11.402,191.708l-11.103,0l-0,-42.597l11.132,-0c2.852,-0 5.049,0.771 6.592,2.314c1.543,1.543 2.315,3.74 2.315,6.592l-0,24.785c-0,1.887 -0.352,3.496 -1.055,4.828c-0.703,1.332 -1.72,2.345 -3.051,3.038c-1.331,0.694 -2.941,1.04 -4.83,1.04Zm-5.537,-37.324l-0,32.051l5.742,0c1.016,0 1.797,-0.304 2.344,-0.913c0.547,-0.608 0.82,-1.466 0.82,-2.574l-0,-25.078c-0,-1.107 -0.273,-1.965 -0.82,-2.573c-0.547,-0.609 -1.328,-0.913 -2.344,-0.913l-5.742,0Z"
+            />
+            <path d="M85.924,182.421l-1.759,9.287l-5.977,0l9.844,-42.597l5.098,0l9.844,42.597l-5.977,0l-1.759,-9.287l-9.314,0Zm8.32,-5.244l-3.663,-19.336l-3.663,19.336l7.326,0Z" />
+            <path d="M166.039,154.384l-7.558,0l-0,-5.273l20.683,0l-0,5.273l-7.558,0l-0,37.324l-5.567,-0l-0,-37.324Z" />
+            <path
+              d="M242.114,182.421l-1.759,9.287l-5.977,0l9.844,-42.597l5.098,0l9.843,42.597l-5.976,0l-1.759,-9.287l-9.314,0Zm8.32,-5.244l-3.663,-19.336l-3.663,19.336l7.326,0Z"
+            />
+            <path
+              d="M329.758,191.708l-10.986,0l0,-42.597l10.195,0c2.969,0 5.259,0.742 6.87,2.226c1.612,1.485 2.417,3.584 2.417,6.299l0,4.512c0,2.011 -0.473,3.667 -1.42,4.965c-0.948,1.299 -2.281,2.125 -3.999,2.476c1.894,0.313 3.364,1.143 4.409,2.49c1.045,1.348 1.567,3.106 1.567,5.274l0,5.625c0,2.773 -0.786,4.922 -2.358,6.445c-1.573,1.524 -3.804,2.285 -6.695,2.285Zm-5.42,-37.324l0,12.51l4.659,0c1.171,0 2.08,-0.401 2.724,-1.201c0.645,-0.801 0.967,-1.934 0.967,-3.399l0,-4.336c0,-1.133 -0.322,-2.011 -0.967,-2.636c-0.644,-0.625 -1.533,-0.938 -2.666,-0.938l-4.717,0Zm0,17.783l0,14.268l4.952,-0c1.269,-0 2.246,-0.318 2.929,-0.952c0.684,-0.635 1.026,-1.519 1.026,-2.652l0,-5.566c0,-1.621 -0.386,-2.876 -1.158,-3.765c-0.771,-0.888 -1.801,-1.333 -3.09,-1.333l-4.659,-0Z"
+            />
+            <path
+              d="M404.544,182.421l-1.759,9.287l-5.977,0l9.844,-42.597l5.098,0l9.843,42.597l-5.976,0l-1.759,-9.287l-9.314,0Zm8.32,-5.244l-3.663,-19.336l-3.663,19.336l7.326,0Z"
+            />
+            <path
+              d="M488.936,192.148c-2.226,0 -4.111,-0.386 -5.654,-1.158c-1.543,-0.771 -2.715,-1.904 -3.515,-3.398c-0.801,-1.494 -1.202,-3.315 -1.202,-5.464l-0,-2.109l5.567,0l-0,1.904c-0,1.543 0.415,2.73 1.245,3.56c0.83,0.83 2.016,1.245 3.559,1.245c1.504,0 2.657,-0.415 3.457,-1.245c0.801,-0.83 1.202,-2.017 1.202,-3.56l-0,-3.721c-0,-1.152 -0.288,-2.085 -0.865,-2.797c-0.576,-0.713 -1.323,-1.324 -2.241,-1.832c-0.918,-0.507 -1.904,-0.996 -2.959,-1.464c-1.054,-0.469 -2.104,-0.987 -3.149,-1.553c-1.045,-0.567 -2.007,-1.255 -2.886,-2.066c-0.879,-0.81 -1.582,-1.816 -2.109,-3.017c-0.528,-1.201 -0.791,-2.691 -0.791,-4.468l-0,-2.461c-0,-3.183 0.888,-5.625 2.666,-7.324c1.777,-1.699 4.326,-2.549 7.646,-2.549c3.242,0 5.723,0.864 7.442,2.593c1.718,1.728 2.578,4.194 2.578,7.397l-0,2.227l-5.567,0l-0,-1.992c-0,-1.563 -0.381,-2.754 -1.142,-3.574c-0.762,-0.821 -1.866,-1.231 -3.311,-1.231c-1.543,0 -2.72,0.391 -3.53,1.172c-0.811,0.781 -1.216,1.894 -1.216,3.34l-0,2.666c-0,1.25 0.313,2.251 0.938,3.003c0.625,0.752 1.44,1.377 2.446,1.875c1.006,0.498 2.065,1.001 3.179,1.508c0.996,0.45 1.987,0.923 2.973,1.421c0.987,0.498 1.895,1.114 2.725,1.846c0.83,0.733 1.494,1.685 1.992,2.857c0.498,1.171 0.747,2.656 0.747,4.453l-0,3.896c-0,3.223 -0.879,5.698 -2.637,7.427c-1.757,1.728 -4.287,2.593 -7.588,2.593Z"
+              style="fill-rule: nonzero"
+            />
+            <path d="M578.223,191.708l-18.281,0l0,-42.597l18.281,0l0,5.273l-12.715,0l0,13.535l11.25,0l0,5.274l-11.25,0l0,13.242l12.715,0l0,5.273Z" />
+            <rect x="0" y="201.01" width="578.521" height="5.6" />
+            <rect x="0" y="134.209" width="578.521" height="5.6" />
+          </g>
+        </svg>
+      </fab-sidebar-header>
+      <fab-sidebar-content>
+        <fab-sidebar-group heading="Inventory" group-collapsible="true"></fab-sidebar-group>
+        <fab-sidebar-group heading="Miscellaneous"></fab-sidebar-group>
+      </fab-sidebar-content>
 
-            </fab-sidebar-navigation-item>
-          </fab-sidebar-navigation-group>
-          <fab-sidebar-navigation-group label="Miscellaneous">
-            <fab-sidebar-navigation-item href="#item1">
-              <svg slot="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-6">
-                  <path
-                    d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25ZM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 1 1 6 0h3a.75.75 0 0 0 .75-.75V15Z" />
-                  <path
-                    d="M8.25 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0ZM15.75 6.75a.75.75 0 0 0-.75.75v11.25c0 .087.015.17.042.248a3 3 0 0 1 5.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 0 0-3.732-10.104 1.837 1.837 0 0 0-1.47-.725H15.75Z" />
-                  <path d="M19.5 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-                </svg>
-              Manufacturers</fab-sidebar-navigation-item>
-            <fab-sidebar-navigation-item href="#item2">
-              <svg slot="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-6">
-                  <path
-                    d="M19.006 3.705a.75.75 0 1 0-.512-1.41L6 6.838V3a.75.75 0 0 0-.75-.75h-1.5A.75.75 0 0 0 3 3v4.93l-1.006.365a.75.75 0 0 0 .512 1.41l16.5-6Z" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M3.019 11.114 18 5.667v3.421l4.006 1.457a.75.75 0 1 1-.512 1.41l-.494-.18v8.475h.75a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1 0-1.5H3v-9.129l.019-.007ZM18 20.25v-9.566l1.5.546v9.02H18Zm-9-6a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75H9Z"
-                    clip-rule="evenodd" />
-                </svg>
-              Railway Undertakings</fab-sidebar-navigation-item>
-            <fab-sidebar-navigation-item href="#item3">
-              <svg slot="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-6">
-                  <path
-                    d="M5.223 2.25c-.497 0-.974.198-1.325.55l-1.3 1.298A3.75 3.75 0 0 0 7.5 9.75c.627.47 1.406.75 2.25.75.844 0 1.624-.28 2.25-.75.626.47 1.406.75 2.25.75.844 0 1.623-.28 2.25-.75a3.75 3.75 0 0 0 4.902-5.652l-1.3-1.299a1.875 1.875 0 0 0-1.325-.549H5.223Z" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M3 20.25v-8.755c1.42.674 3.08.673 4.5 0A5.234 5.234 0 0 0 9.75 12c.804 0 1.568-.182 2.25-.506a5.234 5.234 0 0 0 2.25.506c.804 0 1.567-.182 2.25-.506 1.42.674 3.08.675 4.5.001v8.755h.75a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1 0-1.5H3Zm3-6a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75v-3Zm8.25-.75a.75.75 0 0 0-.75.75v5.25c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-5.25a.75.75 0 0 0-.75-.75h-3Z"
-                    clip-rule="evenodd" />
-                </svg>
-              Retailers</fab-sidebar-navigation-item>
-          </fab-sidebar-navigation-group>
-        </fab-sidebar-navigation>
-        <fab-sidebar-footer slot="footer">Footer Content</fab-sidebar-footer>
-      </fab-sidebar>
-      <main>
-                <fab-theme-switcher></fab-theme-switcher>
+      <fab-sidebar-footer>
+        <div style="padding: 1rem; font-weight: bold; font-size: 1.2rem">Sidebar Footer</div>
+      </fab-sidebar-footer>
+    </fab-sidebar>
 
-                <fab-skeu-switch></fab-skeu-switch>
-                
-                  <fab-skeu-switch style="--lever-diameter: 6em;"></fab-skeu-switch>
-                <fab-skeu-switch style="--lever-diameter: 1em;"></fab-skeu-switch>
+    <main>
+      <fab-theme-switcher></fab-theme-switcher>
 
-        <!-- <div class="colour-grid">
-          <div class="swatch" style="background-color: var(--colour-500); color: white">Colour 500</div>
-          <div class="swatch" style="grid-area: comp1; background-color: var(--complementary-colour-500); color: white">Complementary Colour-500</div>
-          <div class="swatch" style="grid-area: comp2; background-color: var(--tetradic-colour-2-500); color: white">Tetradic Colour 2-500</div>
-          <div class="swatch" style="grid-area: tri1; background-color: var(--triadic-colour-1-500); color: white">Triadic Colour 1-500</div>
-          <div class="swatch" style="grid-area: tri2; background-color: var(--triadic-colour-2-500); color: white">Triadic Colour 2-500</div>
+      <div>Some other content to see how the sidebar interacts with it.</div>
+      <div>Another piece of content to see how the sidebar interacts with it.</div>
 
-          <div class="swatch" style="grid-area: anal1; background-color: var(--analogous-colour-1-500); color: white">Analogous Colour 1-500</div>
-          <div class="swatch" style="grid-area: anal2; background-color: var(--analogous-colour-2-500); color: white">Analogous Colour 2-500</div>
-          <div class="swatch" style="grid-area: tetr1; background-color: var(--tetradic-colour-1-500); color: white">Tetradic Colour 1-500</div>
-          <div class="swatch" style="grid-area: tetr3; background-color: var(--tetradic-colour-3-500); color: white">Tetradic Colour 3-500</div>
-          <div class="swatch" style="grid-area: split1; background-color: var(--split-complementary-colour-1-500); color: white">Split Complementary Colour 1-500</div>
-          <div class="swatch" style="grid-area: split2; background-color: var(--split-complementary-colour-2-500); color: white">Split Complementary Colour 2-500</div>
-        </div>
-
-        <div class="info" style="display: inline-block; padding: 1rem; background-color: var(--info-colour); color: var(--info-foreground)">Info</div>
-
-        <div class="warning" style="display: inline-block; padding: 1rem; background-color: var(--warning-colour); color: var(--warning-foreground)">Warning</div>
-
-        <div class="destructive" style="display: inline-block; padding: 1rem; background-color: var(--destructive-colour); color: var(--destructive-foreground)">Danger</div>
-
-        <div class="success" style="display: inline-block; padding: 1rem; background-color: var(--success-colour); color: var(--success-foreground)">Success</div> -->
-        <!-- <fab-colour-palettes></fab-colour-palettes> -->
-
-
-        <!-- Basic select -->
-        <!-- <div class="flex-row">
-      <fab-select label="Choose a fruit">
-        <fab-option value="apple">Apple</fab-option>
-        <fab-option value="banana">Banana</fab-option>
-        <fab-option value="cherry">Cherry</fab-option>
-      </fab-select>
-      <fab-button>Test</fab-button>
-    </div> -->
-
-        <br />
-
-        <!-- Multiple select -->
-        <!-- <fab-select label="Choose your favorite fruits" multiple>
-      <fab-option value="apple">Apple</fab-option>
-      <fab-option value="banana">Banana</fab-option>
-      <fab-option value="cherry">Cherry</fab-option>
-    </fab-select> -->
-
-        <br />
-
-        <!-- Multiple select, collapsed -->
-        <!-- <fab-select label="Choose your favorite fruits" multiple collapsed-count="4">
-      <fab-option value="apple" selected>Apple</fab-option>
-      <fab-option value="banana">Banana</fab-option>
-      <fab-option value="cherry">Cherry</fab-option>
-      <fab-option value="date">Date</fab-option>
-      <fab-option value="elderberry">Elderberry</fab-option>
-      <fab-option value="fig">Fig</fab-option>
-      <fab-option value="grape">Grape</fab-option>
-    </fab-select> -->
-
-        <!-- Default primary-colour -->
-        <!-- <fab-palette></fab-palette> -->
-
-        <!-- Other colours -->
-        <!-- <fab-palette colour-value="var(--secondary-colour)"></fab-palette> -->
-        <!-- <fab-palette colour-value="oklch(58.861% 0.21461 27.156)"></fab-palette> -->
-
-        <!-- <fab-button>Default</fab-button>
-    <fab-button variant="destructive">Destructive</fab-button>
-    <fab-button variant="outline">Outline</fab-button>
-    <fab-button variant="secondary">Secondary Button</fab-button>
-    <fab-button variant="ghost">Ghost Button</fab-button>
-    <fab-button variant="link">Link Button</fab-button>
-    <fab-button disabled>Disabled Button</fab-button>
-    <br />
-    <fab-button size="lg">Large Button</fab-button>
-    <fab-button>Default Button</fab-button>
-    <fab-button size="sm">Small Button</fab-button>
-    <fab-button size="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-        <path
-          fill-rule="evenodd"
-          d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
-          clip-rule="evenodd"
-        />
-      </svg>
-    </fab-button> -->
-
-
-        <!-- <p style="margin-block: 2rem">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vero id cumque assumenda iure necessitatibus dignissimos a adipisci inventore neque sequi hic ad tenetur soluta
-      quisquam, aliquam officiis odit aliquid.
-    </p> -->
-
-        <!-- <fab-toggle show-indicator></fab-toggle> -->
-      </main>
-    </fab-sidebar-layout>
+      <fab-colour-palettes></fab-colour-palettes>
+    </main>
+    <fab-site-palette></fab-site-palette>
     <script>
       function toggle() {
         document.body.classList.toggle('light');

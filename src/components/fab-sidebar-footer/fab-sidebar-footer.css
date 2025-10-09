@@ -1,0 +1,10 @@
+:host {
+  display: block;
+
+  height: var(--header-height);
+  width: 100%;
+}
+
+:host-context([collapsed='true']) {
+  display: none;
+}

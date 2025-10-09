@@ -1,4 +1,7 @@
 :root {
+  --dark-text-colour: #000000;
+  --light-text-colour: #ffffff;
+
   --brand-colour: oklch(75.732% 0.17518 59.312);
   --accent-colour: oklch(51.933% 0.18613 31.629);
 
@@ -28,6 +31,23 @@
   --primary-foreground: var(--surface-950);
   --secondary-colour: var(--accent-colour);
   --secondary-foreground: var(--surface-50);
+}
+
+/* semantic colours  */
+
+:root {
+  --safeC: 0.14;
+  --safeL: 0.9;
+  --semantic-base: var(--brand-colour);
+
+  --success-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) mod((h + 120), 360));
+  --info-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) mod((h + 210), 360));
+  --danger-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) h);
+  --warning-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) mod((h + 30), 360));
+}
+
+:root.dark {
+  --safeL: 0.3;
 }
 
 :root {
@@ -93,14 +113,28 @@
   --transition-duration-fast: 150ms;
   --transition-duration-medium: 300ms;
   --transition-duration-slow: 500ms;
-  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Focus ring */
-  --focus-ring: 2px solid var(--accent-colour);
-  --focus-ring-offset: 2px;
+  /* Easing */
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+  --easing-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --easing-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
   /* Icon size  */
   --icon-size-sm: 16px;
   --icon-size-md: 24px;
   --icon-size-lg: 32px;
+  --icon-size-xl: 48px;
+  --icon-size-2xl: 64px;
+
+  /* Borders and outlines */
+   --border-width: 1px;
+  --border-style: solid;
+  --border-color: var(--surface-300);
+
+  --outline-width: 2px;
+  --outline-style: solid;
+  --outline-focus-color: var(var(--accent-colour));
+  --outline-color: transparent;
+  --outline-offset: 2px;
 }

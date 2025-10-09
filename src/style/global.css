@@ -1,15 +1,20 @@
 @import './reset.css';
 @import './barlow-font.css';
 @import './colour-harmonies.css';
-@import './palettes.css';
+@import './palettes.auto-generated.css';
 @import './theme.css';
-
 
 :root {
   --font-sans: 'Barlow', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   --font-condensed: 'Barlow Condensed', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   --font-semi-condensed: 'Barlow Semi Condensed', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji';
+
+  /* CSS variables for sidebar component */
+  --sidebar-width: 256px;
+  --sidebar-width-collapsed: 92px;
+  --sidebar-transition: width 0.3s ease;
+  --header-height: var(--sidebar-width-collapsed);
 }
 
 body {
@@ -23,6 +28,58 @@ body {
   font-size: var(--font-size-md, 1rem);
   font-family: var(--font-sans);
   font-weight: 400;
+
+  --black: oklch(0% 0 0);
+  --white: oklch(100% 0.00011 271.152);
+
+  --grey: oklch(49.97% 0.00006 271.152);
+
+  transition: grid-template-columns 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+  &:has(fab-sidebar) {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: 1fr;
+    min-height: 100vh;
+
+    &:has(fab-sidebar[collapsed='true']) {
+      grid-template-columns: var(--sidebar-width-collapsed) 1fr;
+    }
+
+    & fab-sidebar {
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+
+      .logo-icon {
+        width: var(--sidebar-width-collapsed);
+        min-width: var(--sidebar-width-collapsed);
+        height: var(--sidebar-width-collapsed);
+        padding: var(--spacing-4);
+      }
+
+      .logo-text {
+        width: calc(var(--sidebar-width) - var(--sidebar-width-collapsed) - var(--spacing-3));
+        min-width: calc(var(--sidebar-width) - var(--sidebar-width-collapsed) - var(--spacing-3));
+        padding: var(--spacing-4);
+        padding-left: 0;
+
+        animation: from-display-none 0.5s ease forwards;
+      }
+
+      &[collapsed='true'] {
+        width: var(--sidebar-width-collapsed);
+
+        .logo-text {
+          display: none;
+        }
+      }
+    }
+
+    & > * {
+      grid-column: 2 / -1;
+      grid-row: 1 / -1;
+    }
+  }
 }
 
 main {
@@ -74,4 +131,37 @@ main {
 }
 .swatch:nth-child(2n) {
   justify-content: flex-start;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes from-display-none {
+  0% {
+    display: none;
+    pointer-events: none;
+  }
+  1% {
+    display: block;
+    pointer-events: initial;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes from-display-none-submenu {
+  0% {
+    display: none;
+    pointer-events: none;
+    translate: 0 calc(var(--sidebar-width-collapsed) * -0.75);
+  }
+  1% {
+    display: block;
+    pointer-events: initial;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    translate: 0.5rem calc(var(--sidebar-width-collapsed) * -0.75);
+  }
 }

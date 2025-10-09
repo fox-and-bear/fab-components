@@ -1,0 +1,29 @@
+:host {
+  display: block;
+
+  &[collapsible='true'] {
+    h3 {
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+h3 {
+  font-family: var(--font-semi-condensed);
+  font-weight: 500;
+  color: var(--fab-colour-grey-700);
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  padding-inline: var(--spacing-2);
+  letter-spacing: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+:host-context([collapsed='true']) h3 {
+  display: none;
+}

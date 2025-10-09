@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  flex-wrap: nowrap;
+
+  height: var(--header-height);
+}

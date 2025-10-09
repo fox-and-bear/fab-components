@@ -1,5 +1,5 @@
 /*
-  Generate CSS custom properties for color scales from OKLCH base colors.
+  Generate CSS custom properties for colour scales from OKLCH base colours.
   - Reads palettes.config.json
   - Emits src/style/palettes.generated.css with variables:
     --fab-colour-<name>-50..950
@@ -23,7 +23,7 @@ const OUT_PATH = path.resolve(SRC_STYLE_DIR, 'palettes.generated.css');
  */
 function parseOKLCH(str) {
   const m = str.trim().match(/^oklch\(([^)]+)\)$/i);
-  if (!m) throw new Error(`Invalid oklch color: ${str}`);
+  if (!m) throw new Error(`Invalid oklch colour: ${str}`);
   const parts = m[1]
     .split(/\s+/)
     .map(p => p.replace(/,/g, ''))
@@ -43,7 +43,7 @@ function formatOklchFromReference(refVar, lExpr, cExpr) {
   return `oklch(from var(${refVar}) ${lExpr} ${cExpr} h)`;
 }
 
-function generateScaleForColor(name, cfg) {
+function generateScaleForColour(name, cfg) {
   const baseVar = `--fab-colour-${name}`;
   const base500 = `--fab-colour-${name}-500`;
   const tint = cfg.tintTarget;
@@ -91,12 +91,12 @@ function build() {
 
   const sections = [];
 
-  for (const [name, base] of Object.entries(cfg.colors)) {
+  for (const [name, base] of Object.entries(cfg.colours)) {
     // Define the base color custom property at :root level
     // We'll emit it outside sections to keep things simple
     sections.push(`  /* ${name} scale */`);
     // Ensure we also emit the 500 assignment first
-    const scaleLines = generateScaleForColor(name, cfg);
+    const scaleLines = generateScaleForColour(name, cfg);
     // But we also need to ensure that the base var --fab-colour-<name> is defined somewhere.
     // We will prepend a block that sets base vars based on config too.
     sections.push(...scaleLines);
@@ -104,7 +104,7 @@ function build() {
 
   // Foreground variants
   sections.push('');
-  for (const [name] of Object.entries(cfg.colors)) {
+  for (const [name] of Object.entries(cfg.colours)) {
     for (const variant of cfg.contrast.foregroundVariants) {
       sections.push(...generateForegroundFor(name, String(variant)));
       sections.push('');
@@ -115,7 +115,7 @@ function build() {
 
   // Also build a :root block that declares base colors from config
   const baseRootLines = [':root {'];
-  for (const [name, base] of Object.entries(cfg.colors)) {
+  for (const [name, base] of Object.entries(cfg.colours)) {
     baseRootLines.push(`  --fab-colour-${name}: ${base};`);
   }
   baseRootLines.push('}\n');

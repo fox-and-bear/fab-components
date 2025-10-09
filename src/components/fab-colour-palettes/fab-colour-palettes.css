@@ -4,7 +4,7 @@
 
 .palette-container {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   gap: var(--spacing-3) var(--spacing-1);
 }
 

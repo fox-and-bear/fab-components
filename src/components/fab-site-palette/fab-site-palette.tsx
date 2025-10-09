@@ -13,7 +13,7 @@ export class FabSitePalette {
    * Default is 'var(--primary-colour)'.
    */
   @Prop() colourValue: string = 'var(--primary-colour)';
-  
+
   /**
    * The colour harmony to display.
    * Options are 'complementary', 'analogous', 'triadic', 'tetradic', 'split', and 'neutral'.
@@ -22,7 +22,6 @@ export class FabSitePalette {
   @Prop() harmony: 'complementary' | 'analogous' | 'triadic' | 'tetradic' | 'split' | 'neutral' = 'complementary';
 
   @Prop() showHarmonies: boolean = true;
-
 
   private onCopyClick = async (value: string) => {
     try {
@@ -55,125 +54,117 @@ export class FabSitePalette {
             <div class="copy-button" onClick={() => this.onCopyClick(this.colourValue)} title="Copy to clipboard">
               {this.colourValue}
             </div>
-            { this.showHarmonies &&
-            <div class="harmony-tabs">
-              {/* Colour Harmonies  */}
-              <span class="harmony-tab" title="Complementary">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 128 128"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fillRule: 'evenodd',
-                    clipRule: 'evenodd',
-                    strokeLinejoin: 'round',
-                    strokeMiterlimit: '2',
-                  }}
-                >
-                  <g id="complementary">
-                    <circle cx="64" cy="12.502" r="12.502" />
-                    <circle cx="64" cy="115.498" r="12.502" />
-                  </g>
-                  
-                </svg>
-              </span>
-              <span class="harmony-tab" title="Analogous">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 128 128"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fillRule: 'evenodd',
-                    clipRule: 'evenodd',
-                    strokeLinejoin: 'round',
-                    strokeMiterlimit: '2',
-                  }}
-                >
-                 
-                  <g id="analogous">
-                    <circle cx="64" cy="12.502" r="12.502" />
-                    <path d="M32,8.574c5.976,-3.45 13.628,-1.399 17.078,4.576c3.45,5.976 1.4,13.629 -4.576,17.079c-5.976,3.45 -13.628,1.399 -17.078,-4.576c-3.45,-5.976 -1.4,-13.629 4.576,-17.079Z" />
-                    <path d="M96,8.574c5.976,3.45 8.026,11.103 4.576,17.079c-3.45,5.975 -11.102,8.026 -17.078,4.576c-5.976,-3.45 -8.026,-11.103 -4.576,-17.079c3.45,-5.975 11.102,-8.026 17.078,-4.576Z" />
-                  </g>
-                </svg>
-              </span>
-              <span class="harmony-tab" title="Triadic">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 128 128"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fillRule: 'evenodd',
-                    clipRule: 'evenodd',
-                    strokeLinejoin: 'round',
-                    strokeMiterlimit: '2',
-                  }}
-                >
-                  
-                  <g id="triadic">
-                    <circle cx="64" cy="12.502" r="12.502" />
-                    <path d="M119.426,96c-3.45,5.976 -11.103,8.026 -17.079,4.576c-5.975,-3.45 -8.026,-11.102 -4.576,-17.078c3.45,-5.976 11.103,-8.026 17.079,-4.576c5.975,3.45 8.026,11.102 4.576,17.078Z" />
-                    <path d="M8.574,96c-3.45,-5.976 -1.399,-13.628 4.576,-17.078c5.976,-3.45 13.629,-1.4 17.079,4.576c3.45,5.976 1.399,13.628 -4.576,17.078c-5.976,3.45 -13.629,1.4 -17.079,-4.576Z" />
-                  </g>
-                 
-                </svg>
-              </span>
-              <span class="harmony-tab" title="Tetradic">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 128 128"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fillRule: 'evenodd',
-                    clipRule: 'evenodd',
-                    strokeLinejoin: 'round',
-                    strokeMiterlimit: '2',
-                  }}
-                >
-                  
-                  <g id="tetradic">
-                    <path d="M8.574,32c3.45,-5.976 11.103,-8.026 17.079,-4.576c5.975,3.45 8.026,11.102 4.576,17.078c-3.45,5.976 -11.103,8.026 -17.079,4.576c-5.975,-3.45 -8.026,-11.102 -4.576,-17.078Z" />
-                    <path d="M119.426,96c-3.45,5.976 -11.103,8.026 -17.079,4.576c-5.975,-3.45 -8.026,-11.102 -4.576,-17.078c3.45,-5.976 11.103,-8.026 17.079,-4.576c5.975,3.45 8.026,11.102 4.576,17.078Z" />
-                    <circle cx="64" cy="115.498" r="12.502" />
-                    <circle cx="64" cy="12.502" r="12.502" />
-                  </g>
-                  
-                </svg>
-              </span>
-              <span class="harmony-tab" title="Split Complementary">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 128 128"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fillRule: 'evenodd',
-                    clipRule: 'evenodd',
-                    strokeLinejoin: 'round',
-                    strokeMiterlimit: '2',
-                  }}
-                >
-                 
-                  <g id="split">
-                    <circle cx="64" cy="12.502" r="12.502" />
-                    <path d="M96,119.426c-5.976,3.45 -13.628,1.399 -17.078,-4.576c-3.45,-5.976 -1.4,-13.629 4.576,-17.079c5.976,-3.45 13.628,-1.399 17.078,4.576c3.45,5.976 1.4,13.629 -4.576,17.079Z" />
-                    <path d="M32,119.426c-5.976,-3.45 -8.026,-11.103 -4.576,-17.079c3.45,-5.975 11.102,-8.026 17.078,-4.576c5.976,3.45 8.026,11.103 4.576,17.079c-3.45,5.975 -11.102,8.026 -17.078,4.576Z" />
-                  </g>
-                  
-                </svg>
-              </span>
-              <span class="harmony-tab" title="Neutral"></span>
-            </div>
-            }
+            {this.showHarmonies && (
+              <div class="harmony-tabs">
+                {/* Colour Harmonies  */}
+                <span class="harmony-tab" title="Complementary">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 128 128"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      fillRule: 'evenodd',
+                      clipRule: 'evenodd',
+                      strokeLinejoin: 'round',
+                      strokeMiterlimit: '2',
+                    }}
+                  >
+                    <g id="complementary">
+                      <circle cx="64" cy="12.502" r="12.502" />
+                      <circle cx="64" cy="115.498" r="12.502" />
+                    </g>
+                  </svg>
+                </span>
+                <span class="harmony-tab" title="Analogous">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 128 128"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      fillRule: 'evenodd',
+                      clipRule: 'evenodd',
+                      strokeLinejoin: 'round',
+                      strokeMiterlimit: '2',
+                    }}
+                  >
+                    <g id="analogous">
+                      <circle cx="64" cy="12.502" r="12.502" />
+                      <path d="M32,8.574c5.976,-3.45 13.628,-1.399 17.078,4.576c3.45,5.976 1.4,13.629 -4.576,17.079c-5.976,3.45 -13.628,1.399 -17.078,-4.576c-3.45,-5.976 -1.4,-13.629 4.576,-17.079Z" />
+                      <path d="M96,8.574c5.976,3.45 8.026,11.103 4.576,17.079c-3.45,5.975 -11.102,8.026 -17.078,4.576c-5.976,-3.45 -8.026,-11.103 -4.576,-17.079c3.45,-5.975 11.102,-8.026 17.078,-4.576Z" />
+                    </g>
+                  </svg>
+                </span>
+                <span class="harmony-tab" title="Triadic">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 128 128"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      fillRule: 'evenodd',
+                      clipRule: 'evenodd',
+                      strokeLinejoin: 'round',
+                      strokeMiterlimit: '2',
+                    }}
+                  >
+                    <g id="triadic">
+                      <circle cx="64" cy="12.502" r="12.502" />
+                      <path d="M119.426,96c-3.45,5.976 -11.103,8.026 -17.079,4.576c-5.975,-3.45 -8.026,-11.102 -4.576,-17.078c3.45,-5.976 11.103,-8.026 17.079,-4.576c5.975,3.45 8.026,11.102 4.576,17.078Z" />
+                      <path d="M8.574,96c-3.45,-5.976 -1.399,-13.628 4.576,-17.078c5.976,-3.45 13.629,-1.4 17.079,4.576c3.45,5.976 1.399,13.628 -4.576,17.078c-5.976,3.45 -13.629,1.4 -17.079,-4.576Z" />
+                    </g>
+                  </svg>
+                </span>
+                <span class="harmony-tab" title="Tetradic">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 128 128"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      fillRule: 'evenodd',
+                      clipRule: 'evenodd',
+                      strokeLinejoin: 'round',
+                      strokeMiterlimit: '2',
+                    }}
+                  >
+                    <g id="tetradic">
+                      <path d="M8.574,32c3.45,-5.976 11.103,-8.026 17.079,-4.576c5.975,3.45 8.026,11.102 4.576,17.078c-3.45,5.976 -11.103,8.026 -17.079,4.576c-5.975,-3.45 -8.026,-11.102 -4.576,-17.078Z" />
+                      <path d="M119.426,96c-3.45,5.976 -11.103,8.026 -17.079,4.576c-5.975,-3.45 -8.026,-11.102 -4.576,-17.078c3.45,-5.976 11.103,-8.026 17.079,-4.576c5.975,3.45 8.026,11.102 4.576,17.078Z" />
+                      <circle cx="64" cy="115.498" r="12.502" />
+                      <circle cx="64" cy="12.502" r="12.502" />
+                    </g>
+                  </svg>
+                </span>
+                <span class="harmony-tab" title="Split Complementary">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 128 128"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      fillRule: 'evenodd',
+                      clipRule: 'evenodd',
+                      strokeLinejoin: 'round',
+                      strokeMiterlimit: '2',
+                    }}
+                  >
+                    <g id="split">
+                      <circle cx="64" cy="12.502" r="12.502" />
+                      <path d="M96,119.426c-5.976,3.45 -13.628,1.399 -17.078,-4.576c-3.45,-5.976 -1.4,-13.629 4.576,-17.079c5.976,-3.45 13.628,-1.399 17.078,4.576c3.45,5.976 1.4,13.629 -4.576,17.079Z" />
+                      <path d="M32,119.426c-5.976,-3.45 -8.026,-11.103 -4.576,-17.079c3.45,-5.975 11.102,-8.026 17.078,-4.576c5.976,3.45 8.026,11.103 4.576,17.079c-3.45,5.975 -11.102,8.026 -17.078,4.576Z" />
+                    </g>
+                  </svg>
+                </span>
+                <span class="harmony-tab" title="Neutral"></span>
+              </div>
+            )}
           </div>
           <div class="site-palette-steps">
             {this.steps.map((step, index) => (

@@ -20,7 +20,6 @@
 
   /* red scale */
   --fab-colour-red-500: var(--fab-colour-red);
-  --fab-colour-red-50: oklch(from var(--fab-colour-red-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-red-100: oklch(from var(--fab-colour-red-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-red-200: oklch(from var(--fab-colour-red-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-red-300: oklch(from var(--fab-colour-red-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -29,10 +28,8 @@
   --fab-colour-red-700: oklch(from var(--fab-colour-red-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-red-800: oklch(from var(--fab-colour-red-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-red-900: oklch(from var(--fab-colour-red-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-red-950: oklch(from var(--fab-colour-red-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* orange scale */
   --fab-colour-orange-500: var(--fab-colour-orange);
-  --fab-colour-orange-50: oklch(from var(--fab-colour-orange-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-orange-100: oklch(from var(--fab-colour-orange-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-orange-200: oklch(from var(--fab-colour-orange-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-orange-300: oklch(from var(--fab-colour-orange-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -41,10 +38,8 @@
   --fab-colour-orange-700: oklch(from var(--fab-colour-orange-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-orange-800: oklch(from var(--fab-colour-orange-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-orange-900: oklch(from var(--fab-colour-orange-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-orange-950: oklch(from var(--fab-colour-orange-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* yellow scale */
   --fab-colour-yellow-500: var(--fab-colour-yellow);
-  --fab-colour-yellow-50: oklch(from var(--fab-colour-yellow-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-yellow-100: oklch(from var(--fab-colour-yellow-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-yellow-200: oklch(from var(--fab-colour-yellow-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-yellow-300: oklch(from var(--fab-colour-yellow-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -53,10 +48,8 @@
   --fab-colour-yellow-700: oklch(from var(--fab-colour-yellow-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-yellow-800: oklch(from var(--fab-colour-yellow-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-yellow-900: oklch(from var(--fab-colour-yellow-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-yellow-950: oklch(from var(--fab-colour-yellow-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* green scale */
   --fab-colour-green-500: var(--fab-colour-green);
-  --fab-colour-green-50: oklch(from var(--fab-colour-green-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-green-100: oklch(from var(--fab-colour-green-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-green-200: oklch(from var(--fab-colour-green-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-green-300: oklch(from var(--fab-colour-green-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -65,10 +58,8 @@
   --fab-colour-green-700: oklch(from var(--fab-colour-green-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-green-800: oklch(from var(--fab-colour-green-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-green-900: oklch(from var(--fab-colour-green-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-green-950: oklch(from var(--fab-colour-green-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* petrol scale */
   --fab-colour-petrol-500: var(--fab-colour-petrol);
-  --fab-colour-petrol-50: oklch(from var(--fab-colour-petrol-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-petrol-100: oklch(from var(--fab-colour-petrol-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-petrol-200: oklch(from var(--fab-colour-petrol-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-petrol-300: oklch(from var(--fab-colour-petrol-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -77,10 +68,8 @@
   --fab-colour-petrol-700: oklch(from var(--fab-colour-petrol-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-petrol-800: oklch(from var(--fab-colour-petrol-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-petrol-900: oklch(from var(--fab-colour-petrol-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-petrol-950: oklch(from var(--fab-colour-petrol-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* blue scale */
   --fab-colour-blue-500: var(--fab-colour-blue);
-  --fab-colour-blue-50: oklch(from var(--fab-colour-blue-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-blue-100: oklch(from var(--fab-colour-blue-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-blue-200: oklch(from var(--fab-colour-blue-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-blue-300: oklch(from var(--fab-colour-blue-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -89,10 +78,8 @@
   --fab-colour-blue-700: oklch(from var(--fab-colour-blue-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-blue-800: oklch(from var(--fab-colour-blue-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-blue-900: oklch(from var(--fab-colour-blue-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-blue-950: oklch(from var(--fab-colour-blue-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* indigo scale */
   --fab-colour-indigo-500: var(--fab-colour-indigo);
-  --fab-colour-indigo-50: oklch(from var(--fab-colour-indigo-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-indigo-100: oklch(from var(--fab-colour-indigo-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-indigo-200: oklch(from var(--fab-colour-indigo-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-indigo-300: oklch(from var(--fab-colour-indigo-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -101,10 +88,8 @@
   --fab-colour-indigo-700: oklch(from var(--fab-colour-indigo-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-indigo-800: oklch(from var(--fab-colour-indigo-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-indigo-900: oklch(from var(--fab-colour-indigo-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-indigo-950: oklch(from var(--fab-colour-indigo-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* purple scale */
   --fab-colour-purple-500: var(--fab-colour-purple);
-  --fab-colour-purple-50: oklch(from var(--fab-colour-purple-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-purple-100: oklch(from var(--fab-colour-purple-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-purple-200: oklch(from var(--fab-colour-purple-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-purple-300: oklch(from var(--fab-colour-purple-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -113,10 +98,8 @@
   --fab-colour-purple-700: oklch(from var(--fab-colour-purple-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-purple-800: oklch(from var(--fab-colour-purple-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-purple-900: oklch(from var(--fab-colour-purple-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-purple-950: oklch(from var(--fab-colour-purple-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
   /* pink scale */
   --fab-colour-pink-500: var(--fab-colour-pink);
-  --fab-colour-pink-50: oklch(from var(--fab-colour-pink-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
   --fab-colour-pink-100: oklch(from var(--fab-colour-pink-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
   --fab-colour-pink-200: oklch(from var(--fab-colour-pink-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
   --fab-colour-pink-300: oklch(from var(--fab-colour-pink-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
@@ -125,19 +108,63 @@
   --fab-colour-pink-700: oklch(from var(--fab-colour-pink-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
   --fab-colour-pink-800: oklch(from var(--fab-colour-pink-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
   --fab-colour-pink-900: oklch(from var(--fab-colour-pink-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-pink-950: oklch(from var(--fab-colour-pink-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
-  /* grey scale */
-  --fab-colour-grey-500: var(--fab-colour-grey);
-  --fab-colour-grey-50: oklch(from var(--fab-colour-grey-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.95) calc(c - (c - var(--fab-tint-target-chroma)) * 0.95) h);
-  --fab-colour-grey-100: oklch(from var(--fab-colour-grey-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
-  --fab-colour-grey-200: oklch(from var(--fab-colour-grey-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
-  --fab-colour-grey-300: oklch(from var(--fab-colour-grey-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
-  --fab-colour-grey-400: oklch(from var(--fab-colour-grey-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.2) calc(c - (c - var(--fab-tint-target-chroma)) * 0.2) h);
-  --fab-colour-grey-600: oklch(from var(--fab-colour-grey-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.2) calc(c - (c - var(--fab-shade-target-chroma)) * 0.2) h);
-  --fab-colour-grey-700: oklch(from var(--fab-colour-grey-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
-  --fab-colour-grey-800: oklch(from var(--fab-colour-grey-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
-  --fab-colour-grey-900: oklch(from var(--fab-colour-grey-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
-  --fab-colour-grey-950: oklch(from var(--fab-colour-grey-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.95) calc(c - (c - var(--fab-shade-target-chroma)) * 0.95) h);
+  /* grey-warm scale */
+  --fab-colour-grey-warm-500: var(--fab-colour-grey-warm);
+  --fab-colour-grey-warm-100: oklch(from var(--fab-colour-grey-warm-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
+  --fab-colour-grey-warm-200: oklch(from var(--fab-colour-grey-warm-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
+  --fab-colour-grey-warm-300: oklch(from var(--fab-colour-grey-warm-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
+  --fab-colour-grey-warm-400: oklch(from var(--fab-colour-grey-warm-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.2) calc(c - (c - var(--fab-tint-target-chroma)) * 0.2) h);
+  --fab-colour-grey-warm-600: oklch(from var(--fab-colour-grey-warm-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.2) calc(c - (c - var(--fab-shade-target-chroma)) * 0.2) h);
+  --fab-colour-grey-warm-700: oklch(from var(--fab-colour-grey-warm-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
+  --fab-colour-grey-warm-800: oklch(from var(--fab-colour-grey-warm-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
+  --fab-colour-grey-warm-900: oklch(from var(--fab-colour-grey-warm-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
+  /* grey-neutral scale */
+  --fab-colour-grey-neutral-500: var(--fab-colour-grey-neutral);
+  --fab-colour-grey-neutral-100: oklch(from var(--fab-colour-grey-neutral-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
+  --fab-colour-grey-neutral-200: oklch(from var(--fab-colour-grey-neutral-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
+  --fab-colour-grey-neutral-300: oklch(from var(--fab-colour-grey-neutral-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
+  --fab-colour-grey-neutral-400: oklch(from var(--fab-colour-grey-neutral-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.2) calc(c - (c - var(--fab-tint-target-chroma)) * 0.2) h);
+  --fab-colour-grey-neutral-600: oklch(from var(--fab-colour-grey-neutral-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.2) calc(c - (c - var(--fab-shade-target-chroma)) * 0.2) h);
+  --fab-colour-grey-neutral-700: oklch(from var(--fab-colour-grey-neutral-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
+  --fab-colour-grey-neutral-800: oklch(from var(--fab-colour-grey-neutral-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
+  --fab-colour-grey-neutral-900: oklch(from var(--fab-colour-grey-neutral-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
+  /* grey-cool scale */
+  --fab-colour-grey-cool-500: var(--fab-colour-grey-cool);
+  --fab-colour-grey-cool-100: oklch(from var(--fab-colour-grey-cool-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.8) calc(c - (c - var(--fab-tint-target-chroma)) * 0.8) h);
+  --fab-colour-grey-cool-200: oklch(from var(--fab-colour-grey-cool-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.6) calc(c - (c - var(--fab-tint-target-chroma)) * 0.6) h);
+  --fab-colour-grey-cool-300: oklch(from var(--fab-colour-grey-cool-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.4) calc(c - (c - var(--fab-tint-target-chroma)) * 0.4) h);
+  --fab-colour-grey-cool-400: oklch(from var(--fab-colour-grey-cool-500) calc(l + (var(--fab-tint-target-lightness) - l) * 0.2) calc(c - (c - var(--fab-tint-target-chroma)) * 0.2) h);
+  --fab-colour-grey-cool-600: oklch(from var(--fab-colour-grey-cool-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.2) calc(c - (c - var(--fab-shade-target-chroma)) * 0.2) h);
+  --fab-colour-grey-cool-700: oklch(from var(--fab-colour-grey-cool-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.4) calc(c - (c - var(--fab-shade-target-chroma)) * 0.4) h);
+  --fab-colour-grey-cool-800: oklch(from var(--fab-colour-grey-cool-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.6) calc(c - (c - var(--fab-shade-target-chroma)) * 0.6) h);
+  --fab-colour-grey-cool-900: oklch(from var(--fab-colour-grey-cool-500) calc(l - (l - var(--fab-shade-target-lightness)) * 0.8) calc(c - (c - var(--fab-shade-target-chroma)) * 0.8) h);
+
+  --fab-colour-red-100-foreground: oklch(
+    from var(--fab-colour-red-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-red-200-foreground: oklch(
+    from var(--fab-colour-red-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-red-300-foreground: oklch(
+    from var(--fab-colour-red-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
 
   --fab-colour-red-400-foreground: oklch(
     from var(--fab-colour-red-400)
@@ -159,6 +186,60 @@
 
   --fab-colour-red-600-foreground: oklch(
     from var(--fab-colour-red-600)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-red-700-foreground: oklch(
+    from var(--fab-colour-red-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-red-800-foreground: oklch(
+    from var(--fab-colour-red-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-red-900-foreground: oklch(
+    from var(--fab-colour-red-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-orange-100-foreground: oklch(
+    from var(--fab-colour-orange-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-orange-200-foreground: oklch(
+    from var(--fab-colour-orange-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-orange-300-foreground: oklch(
+    from var(--fab-colour-orange-300)
       calc(
         min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
           var(--fab-text-lightness-light)
@@ -193,6 +274,60 @@
       0.01 h
   );
 
+  --fab-colour-orange-700-foreground: oklch(
+    from var(--fab-colour-orange-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-orange-800-foreground: oklch(
+    from var(--fab-colour-orange-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-orange-900-foreground: oklch(
+    from var(--fab-colour-orange-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-yellow-100-foreground: oklch(
+    from var(--fab-colour-yellow-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-yellow-200-foreground: oklch(
+    from var(--fab-colour-yellow-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-yellow-300-foreground: oklch(
+    from var(--fab-colour-yellow-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
   --fab-colour-yellow-400-foreground: oklch(
     from var(--fab-colour-yellow-400)
       calc(
@@ -213,6 +348,60 @@
 
   --fab-colour-yellow-600-foreground: oklch(
     from var(--fab-colour-yellow-600)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-yellow-700-foreground: oklch(
+    from var(--fab-colour-yellow-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-yellow-800-foreground: oklch(
+    from var(--fab-colour-yellow-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-yellow-900-foreground: oklch(
+    from var(--fab-colour-yellow-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-green-100-foreground: oklch(
+    from var(--fab-colour-green-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-green-200-foreground: oklch(
+    from var(--fab-colour-green-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-green-300-foreground: oklch(
+    from var(--fab-colour-green-300)
       calc(
         min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
           var(--fab-text-lightness-light)
@@ -247,6 +436,60 @@
       0.01 h
   );
 
+  --fab-colour-green-700-foreground: oklch(
+    from var(--fab-colour-green-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-green-800-foreground: oklch(
+    from var(--fab-colour-green-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-green-900-foreground: oklch(
+    from var(--fab-colour-green-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-petrol-100-foreground: oklch(
+    from var(--fab-colour-petrol-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-petrol-200-foreground: oklch(
+    from var(--fab-colour-petrol-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-petrol-300-foreground: oklch(
+    from var(--fab-colour-petrol-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
   --fab-colour-petrol-400-foreground: oklch(
     from var(--fab-colour-petrol-400)
       calc(
@@ -267,6 +510,60 @@
 
   --fab-colour-petrol-600-foreground: oklch(
     from var(--fab-colour-petrol-600)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-petrol-700-foreground: oklch(
+    from var(--fab-colour-petrol-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-petrol-800-foreground: oklch(
+    from var(--fab-colour-petrol-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-petrol-900-foreground: oklch(
+    from var(--fab-colour-petrol-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-blue-100-foreground: oklch(
+    from var(--fab-colour-blue-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-blue-200-foreground: oklch(
+    from var(--fab-colour-blue-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-blue-300-foreground: oklch(
+    from var(--fab-colour-blue-300)
       calc(
         min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
           var(--fab-text-lightness-light)
@@ -301,6 +598,60 @@
       0.01 h
   );
 
+  --fab-colour-blue-700-foreground: oklch(
+    from var(--fab-colour-blue-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-blue-800-foreground: oklch(
+    from var(--fab-colour-blue-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-blue-900-foreground: oklch(
+    from var(--fab-colour-blue-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-indigo-100-foreground: oklch(
+    from var(--fab-colour-indigo-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-indigo-200-foreground: oklch(
+    from var(--fab-colour-indigo-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-indigo-300-foreground: oklch(
+    from var(--fab-colour-indigo-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
   --fab-colour-indigo-400-foreground: oklch(
     from var(--fab-colour-indigo-400)
       calc(
@@ -321,6 +672,60 @@
 
   --fab-colour-indigo-600-foreground: oklch(
     from var(--fab-colour-indigo-600)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-indigo-700-foreground: oklch(
+    from var(--fab-colour-indigo-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-indigo-800-foreground: oklch(
+    from var(--fab-colour-indigo-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-indigo-900-foreground: oklch(
+    from var(--fab-colour-indigo-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-purple-100-foreground: oklch(
+    from var(--fab-colour-purple-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-purple-200-foreground: oklch(
+    from var(--fab-colour-purple-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-purple-300-foreground: oklch(
+    from var(--fab-colour-purple-300)
       calc(
         min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
           var(--fab-text-lightness-light)
@@ -355,6 +760,60 @@
       0.01 h
   );
 
+  --fab-colour-purple-700-foreground: oklch(
+    from var(--fab-colour-purple-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-purple-800-foreground: oklch(
+    from var(--fab-colour-purple-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-purple-900-foreground: oklch(
+    from var(--fab-colour-purple-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-pink-100-foreground: oklch(
+    from var(--fab-colour-pink-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-pink-200-foreground: oklch(
+    from var(--fab-colour-pink-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-pink-300-foreground: oklch(
+    from var(--fab-colour-pink-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
   --fab-colour-pink-400-foreground: oklch(
     from var(--fab-colour-pink-400)
       calc(
@@ -382,8 +841,8 @@
       0.01 h
   );
 
-  --fab-colour-grey-400-foreground: oklch(
-    from var(--fab-colour-grey-400)
+  --fab-colour-pink-700-foreground: oklch(
+    from var(--fab-colour-pink-700)
       calc(
         min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
           var(--fab-text-lightness-light)
@@ -391,8 +850,8 @@
       0.01 h
   );
 
-  --fab-colour-grey-500-foreground: oklch(
-    from var(--fab-colour-grey-500)
+  --fab-colour-pink-800-foreground: oklch(
+    from var(--fab-colour-pink-800)
       calc(
         min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
           var(--fab-text-lightness-light)
@@ -400,8 +859,251 @@
       0.01 h
   );
 
-  --fab-colour-grey-600-foreground: oklch(
-    from var(--fab-colour-grey-600)
+  --fab-colour-pink-900-foreground: oklch(
+    from var(--fab-colour-pink-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-100-foreground: oklch(
+    from var(--fab-colour-grey-warm-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-200-foreground: oklch(
+    from var(--fab-colour-grey-warm-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-300-foreground: oklch(
+    from var(--fab-colour-grey-warm-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-400-foreground: oklch(
+    from var(--fab-colour-grey-warm-400)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-500-foreground: oklch(
+    from var(--fab-colour-grey-warm-500)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-600-foreground: oklch(
+    from var(--fab-colour-grey-warm-600)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-700-foreground: oklch(
+    from var(--fab-colour-grey-warm-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-800-foreground: oklch(
+    from var(--fab-colour-grey-warm-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-warm-900-foreground: oklch(
+    from var(--fab-colour-grey-warm-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-100-foreground: oklch(
+    from var(--fab-colour-grey-neutral-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-200-foreground: oklch(
+    from var(--fab-colour-grey-neutral-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-300-foreground: oklch(
+    from var(--fab-colour-grey-neutral-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-400-foreground: oklch(
+    from var(--fab-colour-grey-neutral-400)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-500-foreground: oklch(
+    from var(--fab-colour-grey-neutral-500)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-600-foreground: oklch(
+    from var(--fab-colour-grey-neutral-600)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-700-foreground: oklch(
+    from var(--fab-colour-grey-neutral-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-800-foreground: oklch(
+    from var(--fab-colour-grey-neutral-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-neutral-900-foreground: oklch(
+    from var(--fab-colour-grey-neutral-900)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-100-foreground: oklch(
+    from var(--fab-colour-grey-cool-100)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-200-foreground: oklch(
+    from var(--fab-colour-grey-cool-200)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-300-foreground: oklch(
+    from var(--fab-colour-grey-cool-300)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-400-foreground: oklch(
+    from var(--fab-colour-grey-cool-400)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-500-foreground: oklch(
+    from var(--fab-colour-grey-cool-500)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-600-foreground: oklch(
+    from var(--fab-colour-grey-cool-600)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-700-foreground: oklch(
+    from var(--fab-colour-grey-cool-700)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-800-foreground: oklch(
+    from var(--fab-colour-grey-cool-800)
+      calc(
+        min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
+          var(--fab-text-lightness-light)
+      )
+      0.01 h
+  );
+
+  --fab-colour-grey-cool-900-foreground: oklch(
+    from var(--fab-colour-grey-cool-900)
       calc(
         min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000)) * var(--fab-text-lightness-dark) + (1 - min(1, max(0, (l - var(--fab-contrast-threshold)) * 1000))) *
           var(--fab-text-lightness-light)
@@ -421,7 +1123,9 @@
   --fab-colour-petrol: oklch(71.603% 0.12322 172.386);
   --fab-colour-blue: oklch(62.723% 0.1418 256.113);
   --fab-colour-indigo: oklch(48.413% 0.21583 277.35);
-  --fab-colour-purple: oklch(64.764% 0.14431 295.234);
+  --fab-colour-purple: oklch(47.546% 0.22159 286.556);
   --fab-colour-pink: oklch(68.142% 0.14713 345.179);
-  --fab-colour-grey: oklch(76.067% 0.01821 256.377);
+  --fab-colour-grey-warm: oklch(60.0% 0.015 45);
+  --fab-colour-grey-neutral: oklch(60.0% 0.005 0);
+  --fab-colour-grey-cool: oklch(60.0% 0.015 240);
 }
