@@ -8,8 +8,8 @@
 }
 
 .site-palette {
-  color: var(--fab-colour-grey-800);
-  background: var(--fab-colour-grey-100);
+  color: var(--fab-colour-grey-cool-900);
+  background: var(--fab-colour-not-white);
   min-width: 200px;
 
   position: relative;
@@ -45,11 +45,11 @@ h1 {
   padding-bottom: var(--spacing-3);
   cursor: pointer;
   font-size: 0.75rem;
-  color: var(--fab-colour-grey-600);
+  color: var(--fab-colour-grey-cool-600);
   transition: color 0.3s;
 
   &:hover {
-    color: var(--fab-colour-grey-900);
+    color: var(--fab-colour-grey-cool-900);
   }
 }
 
@@ -123,8 +123,8 @@ h1 {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: var(--fab-colour-grey-300);
-  background-image: radial-gradient(circle at 50% 50%, var(--fab-colour-grey-100), var(--fab-colour-grey-100) 40%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 0)),
+  background-color: var(--fab-colour-grey-cool-300);
+  background-image: radial-gradient(circle at 50% 50%, var(--fab-colour-not-white), var(--fab-colour-not-white) 40%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 0)),
     conic-gradient(from 0deg at 50% 50%, red, orange, yellow, green, blue, indigo, violet, red);
   position: relative;
   cursor: pointer;
@@ -133,7 +133,7 @@ h1 {
   svg {
     fill: transparent;
     stroke-width: 8px;
-    stroke: var(--fab-colour-grey-50);
+    stroke: var(--fab-colour-not-white);
 
     transition: rotate 0.3s;
   }
@@ -145,8 +145,18 @@ h1 {
   }
 
   &:last-of-type {
-    background-image: radial-gradient(circle at 50% 50%, var(--fab-colour-grey-100), var(--fab-colour-grey-100) 40%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 0)),
-      conic-gradient(from 0deg at 50% 50%, var(--fab-colour-grey-600), var(--fab-colour-grey-800), var(--fab-colour-grey-900), var(--fab-colour-grey-800), var(--fab-colour-grey-600), var(--fab-colour-grey-400), var(--fab-colour-grey-200), var(--fab-colour-grey-600));
+    background-image: radial-gradient(circle at 50% 50%, var(--fab-colour-not-white), var(--fab-colour-not-white) 40%, rgba(255, 255, 255, 0) 41%, rgba(255, 255, 255, 0)),
+      conic-gradient(
+        from 0deg at 50% 50%,
+        var(--fab-colour-grey-cool-600),
+        var(--fab-colour-grey-cool-800),
+        var(--fab-colour-grey-cool-900),
+        var(--fab-colour-grey-cool-800),
+        var(--fab-colour-grey-cool-600),
+        var(--fab-colour-grey-cool-400),
+        var(--fab-colour-grey-cool-200),
+        var(--fab-colour-grey-cool-600)
+      );
   }
 
   &::after {
@@ -163,8 +173,8 @@ h1 {
     transition: opacity 0.3s;
     pointer-events: none;
 
-    background: var(--fab-colour-grey-100);
-    color: var(--fab-colour-grey-800);
+    background: var(--fab-colour-grey-cool-100);
+    color: var(--fab-colour-grey-cool-800);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 

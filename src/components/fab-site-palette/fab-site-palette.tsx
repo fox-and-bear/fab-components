@@ -7,7 +7,7 @@ import { Component, Host, Prop, h, State } from '@stencil/core';
   scoped: false,
 })
 export class FabSitePalette {
-  private steps = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+  private steps = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   /**
    * The base colour value (for dynamic generation).
    * Default is 'var(--primary-colour)'.

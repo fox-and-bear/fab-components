@@ -62,60 +62,81 @@ export class FabColourPalettes {
           ))}
         </div>
 
-        <div class="palette-container" style={{ marginTop: '2rem', gridTemplateColumns: 'repeat(7, 1fr)' }}>
+        <div class="palette-container" style={{ marginTop: '2rem', gridTemplateColumns: 'repeat(13, 1fr)' }}>
           <div class="palette">
             <div class="palette-header">
-              <i style={{ backgroundColor: `var(--primary-colour)`, color: `var(--primary-foreground)` }}></i>
-              Semantics
+              <i style={{ backgroundColor: `white` }}></i>
+              Base (500's)
             </div>
-            <div
-              class="palette-step"
-              style={{
-                backgroundColor: `var(--primary-colour)`,
-              }}
-            >
-              <span class="step-label">Primary</span>
+            {this.colours.map(colour => (
+              <div
+                class="palette-step"
+                style={{
+                  backgroundColor: `var(--fab-colour-${colour})`,
+                }}
+              >
+                <span class="step-label" style={{ color: 'black' }}>
+                  {colour}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="palette-container" style={{ marginTop: '2rem', gridTemplateColumns: 'repeat(11, 1fr)' }}>
+          <div class="palette">
+            <div class="palette-header">
+              <i style={{ backgroundColor: `white` }}></i>
+              Surface
             </div>
-
-            <div
-              class="palette-step"
-              style={{
-                backgroundColor: `var(--secondary-colour)`,
-              }}
-            >
-              <span class="step-label">Secondary</span>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-not-black)` }}>
+              <span class="step-label" style={{ color: 'white' }}>
+                not-black
+              </span>
             </div>
-            <div
-              class="palette-step"
-              style={{
-                backgroundColor: `var(--success-colour)`,
-              }}
-            >
-              <span class="step-label">Success</span>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-nearly-black)` }}>
+              <span class="step-label" style={{ color: 'white' }}>
+                nearly-black
+              </span>
             </div>
-            <div
-              class="palette-step"
-              style={{
-                backgroundColor: `var(--info-colour)`,
-              }}
-            >
-              <span class="step-label">Info</span>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-almost-black)` }}>
+              <span class="step-label" style={{ color: 'white' }}>
+                almost-black
+              </span>
             </div>
-            <div
-              class="palette-step"
-              style={{
-                backgroundColor: `var(--danger-colour)`,
-              }}
-            >
-              <span class="step-label">Danger</span>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-kinda-black)` }}>
+              <span class="step-label" style={{ color: 'white' }}>
+                kinda-black
+              </span>
             </div>
-            <div
-              class="palette-step"
-              style={{
-                backgroundColor: `var(--warning-colour)`,
-              }}
-            >
-              <span class="step-label">Warning</span>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-barely-black)` }}>
+              <span class="step-label" style={{ color: 'white' }}>
+                barely-black
+              </span>
+            </div>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-barely-white)` }}>
+              <span class="step-label" style={{ color: 'white' }}>
+                barely-white
+              </span>
+            </div>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-kinda-white)` }}>
+              <span class="step-label" style={{ color: 'black' }}>
+                kinda-white
+              </span>
+            </div>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-almost-white)` }}>
+              <span class="step-label" style={{ color: 'black' }}>
+                almost-white
+              </span>
+            </div>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-nearly-white)` }}>
+              <span class="step-label" style={{ color: 'black' }}>
+                nearly-white
+              </span>
+            </div>
+            <div class="palette-step" style={{ backgroundColor: `var(--fab-colour-not-white)` }}>
+              <span class="step-label" style={{ color: 'black' }}>
+                not-white
+              </span>
             </div>
           </div>
         </div>

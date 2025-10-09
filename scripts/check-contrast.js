@@ -51,6 +51,30 @@ function analyzeContrast() {
 
     const sortedSteps = colorSteps.sort((a, b) => a.weight - b.weight);
 
+    // Add black and white as virtual text colors
+    const virtualTextColors = [
+      { weight: 'black', chromaObj: chroma('#000') },
+      { weight: 'white', chromaObj: chroma('#fff') },
+    ];
+
+    // Black/white text on each background
+    for (const vText of virtualTextColors) {
+      for (const bgColor of sortedSteps) {
+        const bgObj = chroma.oklch(bgColor.l / 100, bgColor.c, bgColor.h);
+        const contrast = chroma.contrast(vText.chromaObj, bgObj);
+        const wcagAA = contrast >= 4.5 ? '✅' : '❌';
+        const wcagAAA = contrast >= 7 ? '✅' : '❌';
+        if (contrast >= 4.5) {
+          console.log(
+            `${vText.weight.toString().padStart(11)} | ${bgColor.weight.toString().padStart(17)} | ${contrast.toFixed(2).padStart(8)} | ${wcagAA.padStart(7)} | ${wcagAAA.padStart(
+              8,
+            )}`,
+          );
+        }
+      }
+    }
+
+    // All same-color combinations (as before)
     for (const textColor of sortedSteps) {
       for (const bgColor of sortedSteps) {
         if (textColor.weight === bgColor.weight) continue; // Skip same weight

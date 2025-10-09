@@ -1,54 +1,41 @@
 :root {
-  --dark-text-colour: #000000;
-  --light-text-colour: #ffffff;
+ 
 
   --brand-colour: oklch(75.732% 0.17518 59.312);
   --accent-colour: oklch(51.933% 0.18613 31.629);
 
-  --bg-colour-deep: var(--surface-50);
-  --bg-colour: var(--surface-100);
-  --bg-colour-shallow: var(--surface-200);
-  --text-colour: var(--surface-950);
+  --bg-colour-deep: var(--fab-colour-not-white);
+  --bg-colour: var(--fab-colour-nearly-white);
+  --bg-colour-shallow: var(--fab-colour-almost-white);
+  --text-colour: var(--fab-colour-not-black);
 
   --primary-colour: var(--accent-colour);
-  --primary-foreground: var(--surface-50);
+  --primary-foreground: var(--fab-colour-not-white);
   --secondary-colour: var(--brand-colour);
-  --secondary-foreground: var(--surface-950);
+  --secondary-foreground: var(--fab-colour-not-black);
 
   --radius: 0px;
 
   --border-width: 1px;
-  --border-colour: var(--surface-300);
+  --border-colour: var(--fab-colour-kinda-white);
 }
 
 :root.dark {
-  --bg-colour-deep: var(--surface-950);
-  --bg-colour: var(--surface-900);
-  --bg-colour-shallow: var(--surface-800);
-  --text-colour: var(--surface-50);
+  --bg-colour-deep: var(--fab-colour-not-black);
+  --bg-colour: var(--fab-colour-nearly-black);
+  --bg-colour-shallow: var(--fab-colour-almost-black);
+  --text-colour: var(--fab-colour-not-white);
 
   --primary-colour: var(--brand-colour);
-  --primary-foreground: var(--surface-950);
+  --primary-foreground: var(--fab-colour-not-black);
   --secondary-colour: var(--accent-colour);
-  --secondary-foreground: var(--surface-50);
+  --secondary-foreground: var(--fab-colour-not-white);
+
+    --border-colour: var(--fab-colour-kinda-black);
+
+    --barely: oklch(43.86% 0.0000 0);
 }
 
-/* semantic colours  */
-
-:root {
-  --safeC: 0.14;
-  --safeL: 0.9;
-  --semantic-base: var(--brand-colour);
-
-  --success-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) mod((h + 120), 360));
-  --info-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) mod((h + 210), 360));
-  --danger-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) h);
-  --warning-colour: oklch(from var(--semantic-base) var(--safeL) var(--safeC) mod((h + 30), 360));
-}
-
-:root.dark {
-  --safeL: 0.3;
-}
 
 :root {
   /* Spacing */
@@ -128,7 +115,7 @@
   --icon-size-2xl: 64px;
 
   /* Borders and outlines */
-   --border-width: 1px;
+  --border-width: 1px;
   --border-style: solid;
   --border-color: var(--surface-300);
 

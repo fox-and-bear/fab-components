@@ -1,5 +1,34 @@
 #!/usr/bin/env node
 /**
+ * Generate a palette scale for a color using the same math as generate-palettes.js (CSS version)
+ * @param {object} base - {l, c, h} for the base color (L in 0-1)
+ * @param {object} tintTarget - {l, c, h} for the tint target (L in 0-1)
+ * @param {object} shadeTarget - {l, c, h} for the shade target (L in 0-1)
+ * @param {object} scaleSteps - {tint: {step: factor}, shade: {step: factor}}
+ * @returns {object} - { step: chromaColor }
+ */
+function generatePaletteScaleJS(base, tintTarget, shadeTarget, scaleSteps) {
+  const chroma = require('chroma-js');
+  const result = {};
+  // Tints (lighter than 500)
+  for (const [step, factor] of Object.entries(scaleSteps.tint)) {
+    const l = base.l + (tintTarget.l - base.l) * factor;
+    const c = base.c + (tintTarget.c - base.c) * factor;
+    const h = base.h; // or interpolate if desired
+    result[step] = chroma.oklch(l, c, h);
+  }
+  // 500 is the base
+  result[500] = chroma.oklch(base.l, base.c, base.h);
+  // Shades (darker than 500)
+  for (const [step, factor] of Object.entries(scaleSteps.shade)) {
+    const l = base.l + (shadeTarget.l - base.l) * factor;
+    const c = base.c + (shadeTarget.c - base.c) * factor;
+    const h = base.h;
+    result[step] = chroma.oklch(l, c, h);
+  }
+  return result;
+}
+/**
  * gen-palettes.js
  *
  * Reads palettes.config.json (next to this file),
@@ -18,29 +47,9 @@ const path = require('path');
 const chroma = require('chroma-js');
 
 /* --------------------------------------------------------------
-   Helper – find the lightness where contrast(white) ≈ contrast(black)
-   -------------------------------------------------------------- */
-function findMidLightness({ c, h }, tolerance = 0.02) {
-  let lo = 0;
-  let hi = 1; // Use decimal range 0-1
-
-  for (let i = 0; i < 20; i++) {
-    const mid = (lo + hi) / 2;
-    const col = chroma.oklch(mid, c, h);
-    const cw = chroma.contrast(col, 'white');
-    const cb = chroma.contrast(col, 'black');
-
-    if (Math.abs(cw - cb) <= tolerance) return mid;
-    // If white contrast > black contrast we are too dark → raise L
-    if (cw > cb) lo = mid;
-    else hi = mid;
-  }
-  return (lo + hi) / 2; // fallback
-}
-
-/* --------------------------------------------------------------
    Main generation routine
    -------------------------------------------------------------- */
+
 function main() {
   // ── Paths ───────────────────────────────────────
   const scriptDir = __dirname; // scripts/
@@ -59,96 +68,45 @@ function main() {
 
   const cssLines = [':root {', '  /* Auto‑generated palette – DO NOT EDIT MANUALLY */'];
 
-  // ── Process each hue ───────────────────────────────────────
+  cssLines.push(''); // blank line
+  //   surface colours
+  cssLines.push('  --fab-colour-not-black: oklch(18.22% 0.00002 271.152);');
+  cssLines.push('  --fab-colour-nearly-black: oklch(22.645% 0.00003 271.152);');
+  cssLines.push('  --fab-colour-almost-black: oklch(22.645% 0.00003 271.152);');
+  cssLines.push('  --fab-colour-kinda-black: oklch(35.233% 0.00004 271.152);');
+  cssLines.push('  --fab-colour-barely-black: oklch(43.86% 0.0000 0);');
+  cssLines.push('  --fab-colour-not-white: oklch(97.614% 0.00011 271.152);');
+  cssLines.push('  --fab-colour-nearly-white: oklch(94.611% 0.00011 271.152);');
+  cssLines.push('  --fab-colour-almost-white: oklch(90.06% 0.0001 271.152);');
+  cssLines.push('  --fab-colour-kinda-white: oklch(84.522% 0.0001 271.152);');
+  cssLines.push('  --fab-colour-barely-white: oklch(71.55% 0.0000 0);');
+  cssLines.push('');
+
+  // --- Math-based palette generation (matches generate-palettes.js logic) ---
+  const scaleSteps = rawConfig.scaleSteps || {
+    tint: { 100: 0.8, 200: 0.64, 300: 0.48, 400: 0.32 },
+    shade: { 600: 0.16, 700: 0.32, 800: 0.56, 900: 0.8 },
+  };
+  const tintTarget = rawConfig.tintTarget || { lightness: 0.98, chroma: 0.03 };
+  const shadeTarget = rawConfig.shadeTarget || { lightness: 0.18, chroma: 0.03 };
+
   for (const [name, oklchStr] of Object.entries(colours)) {
-    // Parse "oklch(L% C H)" → numbers
+    cssLines.push(`  --fab-colour-${name}: ${oklchStr};`);
     const m = oklchStr.match(/oklch\(\s*([\d.]+)%?\s+([\d.]+)\s+([\d.]+)\s*\)/i);
     if (!m) {
       console.warn(`⚠️  Skipping ${name}: cannot parse "${oklchStr}"`);
       continue;
     }
     const [, lPct, c, h] = m.map(Number);
-
-    // Use the config color as our base reference
-    const baseColor = chroma.oklch(lPct / 100, c, h);
-
-    // Special handling for achromatic colors (very low chroma)
-    const isAchromatic = c < 0.01;
-
-    // Find the optimal lightness where contrast(white) ≈ contrast(black)
-    const targetMidL = isAchromatic ? 0.5 : findMidLightness({ c, h }); // Use 50% for achromatic
-
-    // -----------------------------------------------------------------
-    // Create perceptually uniform lightness steps
-    // Use tint/shade to get natural chroma/hue variations, but normalize lightness
-    // -----------------------------------------------------------------
-    const targetLightnesses = [
-      0.8, // 100 - light but substantial
-      0.72, // 200 - medium light
-      0.66, // 300 - slightly light
-      0.62, // 400 - approaching mid
-      targetMidL, // 500 - optimal contrast point
-      targetMidL * 0.85, // 600 - slightly dark
-      targetMidL * 0.7, // 700 - medium dark
-      targetMidL * 0.55, // 800 - dark
-      targetMidL * 0.4, // 900 - very dark
-    ];
-
-    // Create tints and shades to get natural chroma/hue progression
-    const tints = isAchromatic
-      ? [
-          // For achromatic colors, just create greys with zero chroma
-          chroma.oklch(0.8, 0, 0), // 100
-          chroma.oklch(0.72, 0, 0), // 200
-          chroma.oklch(0.66, 0, 0), // 300
-          chroma.oklch(0.62, 0, 0), // 400
-        ]
-      : [
-          baseColor.tint(0.4), // 100 - less desaturated
-          baseColor.tint(0.3), // 200 - preserve more color
-          baseColor.tint(0.2), // 300 - still colorful
-          baseColor.tint(0.1), // 400 - minimal tinting
-        ];
-
-    const shades = isAchromatic
-      ? [
-          chroma.oklch(targetMidL * 0.85, 0, 0), // 600
-          chroma.oklch(targetMidL * 0.7, 0, 0), // 700
-          chroma.oklch(targetMidL * 0.55, 0, 0), // 800
-          chroma.oklch(targetMidL * 0.4, 0, 0), // 900
-        ]
-      : [
-          baseColor.shade(0.2), // 600
-          baseColor.shade(0.4), // 700
-          baseColor.shade(0.6), // 800
-          baseColor.shade(0.8), // 900
-        ];
-
-    // Combine with base color
-    const referenceColors = [...tints, baseColor, ...shades];
-
-    // -----------------------------------------------------------------
-    // Apply target lightnesses while preserving chroma and hue from tint/shade
-    // -----------------------------------------------------------------
-    const okLchStops = referenceColors.map((color, idx) => {
-      const [, C, H] = color.oklch(); // Get chroma and hue from tint/shade
-      const targetL = targetLightnesses[idx]; // Use our perceptually uniform lightness
-
-      // Handle NaN hue for achromatic colors
-      const hueValue = isNaN(H) ? 0 : H;
-      const chromaValue = isAchromatic ? 0 : C;
-
-      return `oklch(${(targetL * 100).toFixed(3)}% ${chromaValue.toFixed(5)} ${hueValue.toFixed(3)})`;
+    const safeH = isNaN(h) ? 0 : h;
+    const base = { l: lPct / 100, c, h };
+    const tintT = { l: tintTarget.lightness, c: tintTarget.chroma, h };
+    const shadeT = { l: shadeTarget.lightness, c: shadeTarget.chroma, h };
+    const palette = generatePaletteScaleJS(base, tintT, shadeT, scaleSteps);
+    Object.entries(palette).forEach(([step, color]) => {
+      const [L, C, H] = color.oklch();
+      cssLines.push(`  --fab-colour-${name}-${step}: oklch(${(L * 100).toFixed(3)}% ${C.toFixed(5)} ${safeH.toFixed(3)});`);
     });
-
-    // -----------------------------------------------------------------
-    // Emit CSS custom properties
-    // -----------------------------------------------------------------
-    okLchStops.forEach((oklch, idx) => {
-      const weight = (idx + 1) * 100; // 100,200,…,900
-      cssLines.push(`  --fab-colour-${name}-${weight}: ${oklch};`);
-    });
-    // Add a blank line after each colour group for readability
     cssLines.push('');
   }
 

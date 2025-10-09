@@ -1,13 +1,12 @@
 :host {
   /* default light theme styles */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: var(--fab-colour-not-white);
+  --sidebar-foreground: var(--fab-colour-not-black);
+  --sidebar-primary: var(--fab-colour-not-black);
+  --sidebar-primary-foreground: var(--fab-colour-not-white);
+  --sidebar-accent: var(--fab-colour-not-black);
+  --sidebar-accent-foreground: var(--fab-colour-not-black);
+  --sidebar-border: var(--border-colour);
 
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -27,14 +26,13 @@
 
 /* dark theme styles - these will apply when document has 'dark' class */
 :host-context(.dark) {
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: var(--fab-colour-nearly-black);
+  --sidebar-foreground: var(--fab-colour-not-white);
+  --sidebar-primary: var(--fab-colour-not-black);
+  --sidebar-primary-foreground: var(--fab-colour-not-white);
+  --sidebar-accent: var(--fab-colour-not-black);
+  --sidebar-accent-foreground: var(--fab-colour-grey-neutral);
+  --sidebar-border: var(--border-colour);
 }
 
 .toggle-button {
@@ -45,12 +43,20 @@
   padding: 0;
   top: calc(var(--header-height) / 2 - 8px);
   right: 0;
-  color: var(--colour-50);
-  /* background-color: var(--sidebar); */
+  color: inherit;
+
   z-index: 1;
   transform: translate(50%, 0);
 
   transition: color 0.2s;
+
+  background: radial-gradient(
+    circle at center,
+    var(--sidebar) 0%,
+    var(--sidebar) 50%,
+    transparent 51%,
+    transparent 100%
+  );
 }
 .toggle-button:hover {
   color: var(--colour-500);
