@@ -22,7 +22,7 @@ body {
   background-color: var(--bg-colour-deep);
   background-image: conic-gradient(from 5deg at 70% 70%, transparent 0%, transparent 25%, var(--bg-colour-deep) 25%, var(--bg-colour-deep) 55%, transparent 55%, transparent 100%),
     conic-gradient(from 5deg at 65% 68%, transparent 0%, transparent 25%, var(--bg-colour) 25%, var(--bg-colour) 65%, transparent 65%, transparent 100%);
-  backdrop-filter: blur(10px);
+  background-attachment: fixed;
   color: var(--text-colour);
   line-height: var(--line-height-normal, 1.5);
   font-size: var(--font-size-md, 1rem);

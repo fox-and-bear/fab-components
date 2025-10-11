@@ -1,6 +1,6 @@
 :root {
   /* Contrast threshold and text lightness for foreground calculation */
-  --fab-contrast-threshold: 0.45;
+  --fab-contrast-threshold: 0.65;
   --fab-text-lightness-dark: 0.98; /* for dark text on dark bg */
   --fab-text-lightness-light: 0.15; /* for light text on light bg */
   /*---------- UTILITY VARIATIONS - requires setting --adjust-colour in element first -----------*/

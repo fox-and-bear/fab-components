@@ -1,4 +1,5 @@
-import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core';
+import sidebarState, { toggleSidebar } from '../../store/sidebar-store';
 
 @Component({
   tag: 'fab-sidebar',
@@ -6,22 +7,10 @@ import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class FabSidebar {
-  @Prop() collapsed: boolean = false;
-  
-  /**
-   * Emitted when the sidebar is toggled.
-   */
-  @Event() fabToggle: EventEmitter<void>;
-
-  private toggleSidebar = () => {
-    this.collapsed = !this.collapsed;
-    this.fabToggle.emit();
-  }
-
   render() {
     return (
-      <Host aria-expanded={this.collapsed ? 'false' : 'true'} collapsed={this.collapsed ? 'true' : 'false'}>
-        <span class="toggle-button" onClick={this.toggleSidebar}  role="button" aria-label={this.collapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
+      <Host aria-expanded={sidebarState.collapsed ? 'false' : 'true'} collapsed={sidebarState.collapsed ? 'true' : 'false'}>
+        <span class="toggle-button" onClick={toggleSidebar} role="button" aria-label={sidebarState.collapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <path
               fill-rule="evenodd"
@@ -30,7 +19,6 @@ export class FabSidebar {
               fill="currentColor"
             ></path>
           </svg>
-         
         </span>
         <slot></slot>
       </Host>

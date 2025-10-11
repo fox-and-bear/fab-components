@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-block: 0.5rem;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    color: var(--primary-colour);
+  }
+
+  /* This is so the entire item is clickable, not just the text */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+  }
+}

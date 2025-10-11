@@ -1,9 +1,10 @@
 :host {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: nowrap;
   align-items: center;
 
-  flex-wrap: nowrap;
-
   height: var(--header-height);
+
+  
 }

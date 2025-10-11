@@ -1,5 +1,7 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
 
-  margin-top: 2rem;
+  margin-top: var(--spacing-1);
 }

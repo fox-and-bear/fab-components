@@ -95,8 +95,63 @@
         </svg>
       </fab-sidebar-header>
       <fab-sidebar-content>
-        <fab-sidebar-group heading="Inventory" group-collapsible="true"></fab-sidebar-group>
-        <fab-sidebar-group heading="Miscellaneous"></fab-sidebar-group>
+        <fab-sidebar-group id="inventory" heading="Inventory" group-collapsible="false" group-collapsed="false">
+          <fab-sidebar-group id="locomotives" heading="Locomotives" group-collapsible="true" group-collapsed="true">
+            <fab-sidebar-item href="#A" icon="train" label="All Items"></fab-sidebar-item>
+            <fab-sidebar-item href="#B" icon="train" label="Steam"></fab-sidebar-item>
+            <fab-sidebar-item href="#C" icon="train" label="Diesel"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Electric"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Multiple Units"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Locomotive/Train Sets"></fab-sidebar-item>
+          </fab-sidebar-group>
+
+          <fab-sidebar-group id="coaches-and-wagons" heading="Coaches & Wagons" group-collapsible="true">
+            <fab-sidebar-item href="#" icon="train" label="All Items"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Passenger Coaches"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Freight Wagons"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Coach & Wagon Sets"></fab-sidebar-item>
+          </fab-sidebar-group>
+
+          <fab-sidebar-group id="sets" heading="Sets" group-collapsible="true">
+            <fab-sidebar-item href="#" icon="train" label="All Items"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Train Sets"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Coach & Wagon Sets"></fab-sidebar-item>
+          </fab-sidebar-group>
+
+          <fab-sidebar-group id="tracks" heading="Tracks" group-collapsible="true">
+            <fab-sidebar-item href="#" icon="train" label="All Items"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Tracks with Bedding"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Tracks without Bedding"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Turntables"></fab-sidebar-item>
+          </fab-sidebar-group>
+
+          <fab-sidebar-group id="control" heading="Control" group-collapsible="true">
+            <fab-sidebar-item href="#" icon="train" label="All Items"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Analogue Devices"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Digital Devices"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Power Supplies"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Decoders"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Boosters"></fab-sidebar-item>
+          </fab-sidebar-group>
+
+          <fab-sidebar-group id="accessories" heading="Accessories" group-collapsible="true">
+            <fab-sidebar-item href="#" icon="train" label="All Items"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Locomotive"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Coach & Wagon"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Track"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Control"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Couplings"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Lighting"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Smoke Generators"></fab-sidebar-item>
+            <fab-sidebar-item href="#" icon="train" label="Other"></fab-sidebar-item>
+          </fab-sidebar-group>
+        </fab-sidebar-group>
+
+        <fab-sidebar-group id="miscellaneous" heading="Miscellaneous">
+          <fab-sidebar-item href="#" icon="train" label="Manufacturers"></fab-sidebar-item>
+          <fab-sidebar-item href="#" icon="train" label="Railway Undertakings"></fab-sidebar-item>
+          <fab-sidebar-item href="#" icon="train" label="Retailers"></fab-sidebar-item>
+        </fab-sidebar-group>
       </fab-sidebar-content>
 
       <fab-sidebar-footer>

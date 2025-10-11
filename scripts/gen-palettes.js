@@ -72,7 +72,7 @@ function main() {
   //   surface colours
   cssLines.push('  --fab-colour-not-black: oklch(18.22% 0.00002 271.152);');
   cssLines.push('  --fab-colour-nearly-black: oklch(22.645% 0.00003 271.152);');
-  cssLines.push('  --fab-colour-almost-black: oklch(22.645% 0.00003 271.152);');
+  cssLines.push('  --fab-colour-almost-black: oklch(28.094% 0.00003 271.152);');
   cssLines.push('  --fab-colour-kinda-black: oklch(35.233% 0.00004 271.152);');
   cssLines.push('  --fab-colour-barely-black: oklch(43.86% 0.0000 0);');
   cssLines.push('  --fab-colour-not-white: oklch(97.614% 0.00011 271.152);');

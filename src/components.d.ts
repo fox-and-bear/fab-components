@@ -139,10 +139,6 @@ export namespace Components {
         "setValue": (value: string | string[]) => Promise<void>;
     }
     interface FabSidebar {
-        /**
-          * @default false
-         */
-        "collapsed": boolean;
     }
     interface FabSidebarContent {
     }
@@ -151,7 +147,7 @@ export namespace Components {
     interface FabSidebarGroup {
         /**
           * Whether the group is currently collapsed.
-          * @default false
+          * @default true
          */
         "groupCollapsed"?: boolean;
         /**
@@ -165,6 +161,19 @@ export namespace Components {
         "heading"?: string;
     }
     interface FabSidebarHeader {
+    }
+    interface FabSidebarItem {
+        /**
+          * @default false
+         */
+        "active": boolean;
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        "href": string;
+        "icon": string;
+        "label": string;
     }
     interface FabSitePalette {
         /**
@@ -206,10 +215,6 @@ export interface FabOptionCustomEvent<T> extends CustomEvent<T> {
 export interface FabSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLFabSelectElement;
-}
-export interface FabSidebarCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLFabSidebarElement;
 }
 declare global {
     interface HTMLFabButtonElementEventMap {
@@ -281,18 +286,7 @@ declare global {
         prototype: HTMLFabSelectElement;
         new (): HTMLFabSelectElement;
     };
-    interface HTMLFabSidebarElementEventMap {
-        "fabToggle": void;
-    }
     interface HTMLFabSidebarElement extends Components.FabSidebar, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLFabSidebarElementEventMap>(type: K, listener: (this: HTMLFabSidebarElement, ev: FabSidebarCustomEvent<HTMLFabSidebarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLFabSidebarElementEventMap>(type: K, listener: (this: HTMLFabSidebarElement, ev: FabSidebarCustomEvent<HTMLFabSidebarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLFabSidebarElement: {
         prototype: HTMLFabSidebarElement;
@@ -321,6 +315,12 @@ declare global {
     var HTMLFabSidebarHeaderElement: {
         prototype: HTMLFabSidebarHeaderElement;
         new (): HTMLFabSidebarHeaderElement;
+    };
+    interface HTMLFabSidebarItemElement extends Components.FabSidebarItem, HTMLStencilElement {
+    }
+    var HTMLFabSidebarItemElement: {
+        prototype: HTMLFabSidebarItemElement;
+        new (): HTMLFabSidebarItemElement;
     };
     interface HTMLFabSitePaletteElement extends Components.FabSitePalette, HTMLStencilElement {
     }
@@ -364,6 +364,7 @@ declare global {
         "fab-sidebar-footer": HTMLFabSidebarFooterElement;
         "fab-sidebar-group": HTMLFabSidebarGroupElement;
         "fab-sidebar-header": HTMLFabSidebarHeaderElement;
+        "fab-sidebar-item": HTMLFabSidebarItemElement;
         "fab-site-palette": HTMLFabSitePaletteElement;
         "fab-skeu-switch": HTMLFabSkeuSwitchElement;
         "fab-theme-switcher": HTMLFabThemeSwitcherElement;
@@ -516,14 +517,6 @@ declare namespace LocalJSX {
         "required"?: boolean;
     }
     interface FabSidebar {
-        /**
-          * @default false
-         */
-        "collapsed"?: boolean;
-        /**
-          * Emitted when the sidebar is toggled.
-         */
-        "onFabToggle"?: (event: FabSidebarCustomEvent<void>) => void;
     }
     interface FabSidebarContent {
     }
@@ -532,7 +525,7 @@ declare namespace LocalJSX {
     interface FabSidebarGroup {
         /**
           * Whether the group is currently collapsed.
-          * @default false
+          * @default true
          */
         "groupCollapsed"?: boolean;
         /**
@@ -546,6 +539,19 @@ declare namespace LocalJSX {
         "heading"?: string;
     }
     interface FabSidebarHeader {
+    }
+    interface FabSidebarItem {
+        /**
+          * @default false
+         */
+        "active"?: boolean;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        "href"?: string;
+        "icon"?: string;
+        "label"?: string;
     }
     interface FabSitePalette {
         /**
@@ -587,6 +593,7 @@ declare namespace LocalJSX {
         "fab-sidebar-footer": FabSidebarFooter;
         "fab-sidebar-group": FabSidebarGroup;
         "fab-sidebar-header": FabSidebarHeader;
+        "fab-sidebar-item": FabSidebarItem;
         "fab-site-palette": FabSitePalette;
         "fab-skeu-switch": FabSkeuSwitch;
         "fab-theme-switcher": FabThemeSwitcher;
@@ -609,6 +616,7 @@ declare module "@stencil/core" {
             "fab-sidebar-footer": LocalJSX.FabSidebarFooter & JSXBase.HTMLAttributes<HTMLFabSidebarFooterElement>;
             "fab-sidebar-group": LocalJSX.FabSidebarGroup & JSXBase.HTMLAttributes<HTMLFabSidebarGroupElement>;
             "fab-sidebar-header": LocalJSX.FabSidebarHeader & JSXBase.HTMLAttributes<HTMLFabSidebarHeaderElement>;
+            "fab-sidebar-item": LocalJSX.FabSidebarItem & JSXBase.HTMLAttributes<HTMLFabSidebarItemElement>;
             "fab-site-palette": LocalJSX.FabSitePalette & JSXBase.HTMLAttributes<HTMLFabSitePaletteElement>;
             "fab-skeu-switch": LocalJSX.FabSkeuSwitch & JSXBase.HTMLAttributes<HTMLFabSkeuSwitchElement>;
             "fab-theme-switcher": LocalJSX.FabThemeSwitcher & JSXBase.HTMLAttributes<HTMLFabThemeSwitcherElement>;
